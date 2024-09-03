@@ -2,6 +2,13 @@
   --primary: #022d62;
 }
 
+@font-face {
+  font-family: "Cascadia Mono";
+  src: 
+    local("Cascadia Mono"),
+    url(assets/fonts/CascadiaMono.ttf);
+}
+
 body,
 h1,
 h2,
