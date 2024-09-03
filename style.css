@@ -1,3 +1,7 @@
+:root {
+  --primary: #022d62;
+}
+
 body,
 h1,
 h2,
@@ -19,29 +23,16 @@ figure {
 }
 
 body {
-  background-color: #022d62;
+  background-color: var(--primary);
   color: white;
   font-family: "Cascadia Mono", monospace;
 
   user-select: none;
 }
 
-#body-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  height: 100vh;
-  text-align: center;
-}
-
-#cs-logo {
-  width: 128px;
-}
+/* --- */
 
 hr {
-  margin-bottom: 24px;
   width: 24px;
 
   border: solid white 0.7px;
@@ -50,7 +41,12 @@ hr {
 
 a:link {
   text-decoration: underline;
-  text-decoration-thickness: 1.4px;
+  text-underline-offset: 2.25px;
+  text-decoration-thickness: 1.5px;
+
+  color: white;
+  background-color: none;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 a:visited {
@@ -58,5 +54,72 @@ a:visited {
 }
 
 a:hover {
-  text-decoration-thickness: 2.8px;
+  text-decoration: none;
+
+  color: var(--primary);
+  background-color: white;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/*  */
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 100vh;
+  text-align: center;
+
+  padding-inline: 8px;
+}
+
+#cs-logo {
+  width: 128px;
+}
+
+main hr {
+  margin-bottom: 24px;
+}
+
+/* --- */
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-align: center;
+
+  padding-bottom: 12px;
+}
+
+#footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  text-align: center;
+}
+
+#footer-content * {
+  margin-inline: 16px;
+}
+
+footer hr {
+  margin-bottom: 12px;
+  transition: width 0.2s;
+}
+
+footer:hover hr {
+  width: 192px;
+  transition: width 0.2s;
 }
