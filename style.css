@@ -1,12 +1,12 @@
 :root {
   --primary: #022d62;
+  --footer-color: black;
+  --footer-hover-color: white;
 }
 
 @font-face {
   font-family: "Cascadia Mono";
-  src: 
-    local("Cascadia Mono"),
-    url(assets/fonts/CascadiaMono.ttf);
+  src: local("Cascadia Mono"), url(assets/fonts/CascadiaMono.ttf);
 }
 
 body,
@@ -29,77 +29,9 @@ figure {
   padding: 0;
 }
 
-body {
-  background-color: var(--primary);
-  color: white;
-  font-family: "Cascadia Mono", monospace;
-
-  user-select: none;
-  overscroll-behavior-y: none;
-}
-
-/* --- */
-
-hr {
-  width: 24px;
-
-  border: solid white 0.7px;
-  opacity: 0.6;
-}
-
-a:link {
-  text-decoration: underline;
-  text-underline-offset: 2.25px;
-  text-decoration-thickness: 1.5px;
-
-  color: white;
-  background-color: none;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-a:visited {
-  color: inherit;
-}
-
-a:hover {
-  text-decoration: none;
-
-  color: var(--primary);
-  background-color: white;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-/*  */
-
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  height: 100vh;
-  height: 100dvh;
-  text-align: center;
-
-  padding-inline: 8px;
-}
-
-#cs-logo {
-  width: 128px;
-}
-
-main hr {
-  margin-bottom: 24px;
-}
-
 /* --- */
 
 footer {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,6 +41,15 @@ footer {
 
   padding-bottom: 12px;
 }
+
+footer.absolute {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+}
+
+/* --- */
 
 #footer-content {
   display: flex;
@@ -123,6 +64,15 @@ footer {
   margin-inline: 16px;
 }
 
+/* --- */
+
+footer hr {
+  width: 24px;
+
+  border: solid var(--footer-color) 0.7px;
+  opacity: 0.6;
+}
+
 footer hr {
   margin-bottom: 12px;
   transition: width 0.2s;
@@ -131,4 +81,28 @@ footer hr {
 footer:hover hr {
   width: 192px;
   transition: width 0.2s;
+}
+
+/* --- */
+
+footer a:link {
+  text-decoration: underline;
+  text-underline-offset: 2.25px;
+  text-decoration-thickness: 1.5px;
+
+  color: var(--footer-color);
+  background-color: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+footer a:visited {
+  color: var(--footer-color);
+}
+
+footer a:hover {
+  text-decoration: none;
+
+  color: var(--footer-hover-color);
+  background-color: var(--footer-color);
+  transition: background-color 0.2s, color 0.2s;
 }
