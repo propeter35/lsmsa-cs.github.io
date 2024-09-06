@@ -4,36 +4,95 @@
     <title>CS Scavenger Hunt | LSMSA Computer Science Club</title>
     <link
       rel="shortcut icon"
-      href="assets/cs-logo/filled.svg"
+      href="assets/cs-logo/filled path.svg"
       type="image/x-icon"
     />
-
-    <link rel="stylesheet" href="scavenger-hunt.css" />
     <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../cover.css" />
+    <link rel="stylesheet" href="scavenger-hunt.css" />
+
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
+    <nav id="main-navbar">
+      <div class="inner">
+        <a href="/" id="navbar-logo">
+          <img
+            src="../assets/cs-logo/transparent path.svg"
+            alt="Computer Science Club logo"
+            id="cs-logo"
+            draggable="false"
+          />
+          <span>@ LSMSA</span>
+        </a>
+      </div>
+    </nav>
     <main>
-      <a href="/" class="none">
-        <img
-          src="/assets/cs-logo/transparent path.svg"
-          alt="Computer Science Club logo"
-          id="cs-logo"
-          draggable="false"
-        />
-      </a>
-      <hr />
-      <div>
-        <h1>Nothing to see here yet!</h1>
-        <span>The CS Scavenger Hunt is still a WIP</span>
-        <br />
-        <span>Return to the </span>
-        <a href="/">home page</a>
+      <div class="hunt-info">
+        <div class="inner">
+          <h1>Computer Science Scavenger Hunt</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            dolor suscipit in ipsum, totam culpa facere ullam cumque tempora
+            accusantium iusto cum debitis, animi impedit laudantium perspiciatis
+            vero omnis vel!
+          </p>
+        </div>
+      </div>
+      <div class="hunt-view-wrapper">
+        <div class="inner">
+          <div class="hunt-view">
+            <div class="task-card">
+              <div class="card-heading">
+                <div class="card-icon">
+                  <i data-feather="code"></i>
+                </div>
+                <h3>Code</h3>
+              </div>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+            <details class="task-card" open>
+              <summary class="card-heading">
+                <div class="card-icon">
+                  <i data-feather="code"></i>
+                </div>
+                <h3>Coding</h3>
+              </summary>
+              <div class="card-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam dolor suscipit in ipsum, totam culpa facere ullam cumque
+                tempora accusantium iusto cum debitis, animi impedit laudantium
+                perspiciatis vero omnis vel!
+              </div>
+            </details>
+            <!-- <details class="task-card" open>
+              <summary class="card-heading">
+                <div class="card-kicker">
+                  Skills: Coding
+                </div>
+                <div class="card-title">
+                  <div class="card-icon">
+                    <i data-feather="code"></i>
+                    <h4>The power of programming in Python!</h4>
+                  </div>
+                </div>
+              </summary>
+              <div class="card-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam dolor suscipit in ipsum, totam culpa facere ullam cumque
+                tempora accusantium iusto cum debitis, animi impedit laudantium
+                perspiciatis vero omnis vel!
+              </div>
+            </details> -->
+          </div>
+        </div>
       </div>
     </main>
     <footer>
@@ -46,5 +105,8 @@
     </footer>
 
     <script src="" async defer></script>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
