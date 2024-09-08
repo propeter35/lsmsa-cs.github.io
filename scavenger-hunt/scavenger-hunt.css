@@ -187,9 +187,9 @@ p {
 
   cursor: pointer;
 
-  background-color: var(--background-tertiary);
+  /* background-color: var(--background-tertiary); */
   border-radius: 8px;
-  border-bottom: 1px solid var(--border-primary);
+  /* border-bottom: 1px solid var(--border-primary); */
 }
 
 .task-card[open] .card-header {
@@ -214,7 +214,9 @@ p {
   flex-grow: 1;
 
   /* text-align: right; */
+  font-style: italic;
 
+  margin-left: 8px;
   margin-right: 4px;
 
   color: var(--text-tertiary);
@@ -252,6 +254,8 @@ p {
   position: relative;
   bottom: 2px;
   height: 20px;
+
+  color: var(--text-secondary);
 }
 
 .card-icon * {
@@ -278,12 +282,12 @@ p {
   padding: 6px;
   padding-left: 12px;
 
-  margin: 10px 0;
-  margin-left: calc(4px + 24px);
+  margin-bottom: 10px;
+  margin-left: calc(4px + 24px + 8px);
   margin-right: 8px;
 
   font-size: 10pt;
-  color: var(--text-secondary);
+  /* color: var(--text-secondary); */
 
   cursor: pointer;
   border-radius: 8px;
@@ -334,11 +338,14 @@ p {
 
 .card-task-status * {
   height: 18px;
+  stroke-width: 2.5px;
 }
 
 .card-task-content {
   display: flex;
-  align-items: center;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
 
   flex: 1 0;
 }
@@ -390,6 +397,8 @@ p {
 .card-task-content-group {
   white-space: pre;
   color: var(--text-secondary);
+
+  font-size: 9pt;
 }
 
 .card-task-content-description {
