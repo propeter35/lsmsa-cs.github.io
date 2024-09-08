@@ -12,6 +12,9 @@
   --text-secondary: var(--thm-d-text-secondary);
   --text-tertiary: var(--thm-d-text-tertiary);
 
+  --footer-bg-color: var(--background-primary);
+  --footer-text-color: var(--text-primary);
+
   font-family: Inter, sans-serif;
   font-feature-settings: "liga" 1, "calt" 1;
 }
@@ -63,9 +66,11 @@ p {
   color: var(--text-primary);
 }
 
+/* --- INNER DIV CLASS --- */
+
 .inner {
   margin-inline: auto;
-  padding: 8px;
+  padding: 0 16px;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -86,7 +91,7 @@ p {
   }
 }
 
-/* --- */
+/* --- NAVBAR --- */
 
 #main-navbar {
   background-color: var(--thm-l-accent);
@@ -96,7 +101,7 @@ p {
   text-decoration: none;
 }
 
-/* --- */
+/* --- NAVBAR LOGO --- */
 
 #navbar-logo {
   display: flex;
@@ -120,7 +125,7 @@ p {
   left: 3px;
 }
 
-/* --- */
+/* --- HUNT INFO --- */
 
 .hunt-info {
   /* background-color: #022d62;
@@ -139,10 +144,10 @@ p {
   padding-left: 12px;
 }
 
-/* --- */
+/* --- HUNT VIEW --- */
 
 .hunt-view-wrapper {
-  min-height: 200vh;
+  min-height: 100vh;
   background-color: var(--background-primary);
 }
 
@@ -152,15 +157,28 @@ p {
   flex-wrap: wrap;
 }
 
-/* --- */
+/* --- HUNT CATEGORY --- */
+
+.hunt-category {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 0;
+}
+
+.hunt-category h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+
+  font-size: 18pt;
+}
+
+/* --- TASK CARD --- */
 
 .task-card {
   margin: 8px;
-  /* padding: 8px; */
 
-  /* width: calc(256px - 16px); */
   width: calc(320px - 16px);
-  /* min-height: 128px; */
   height: fit-content;
 
   background-color: var(--background-secondary);
@@ -178,7 +196,7 @@ p {
   transition: outline-width 0.1s linear;
 }
 
-/* --- */
+/* --- CARD HEADER --- */
 
 .card-header {
   display: flex;
@@ -186,22 +204,19 @@ p {
 
   padding: 8px 8px;
 
-  cursor: pointer;
-
-  /* background-color: var(--background-tertiary); */
   border-radius: 8px;
-  /* border-bottom: 1px solid var(--border-primary); */
+
+  cursor: pointer;
 }
 
 .task-card[open] .card-header {
   border-radius: 8px 8px 0 0;
 }
 
-/* --- */
+/* --- CARD KICKER --- */
 
 .card-kicker {
   display: flex;
-  /* margin-left: calc(24px + 8px); */
   margin-left: 8px;
   margin-bottom: 4px;
 
@@ -214,10 +229,6 @@ p {
 }
 
 .card-icon {
-  /* position: relative;
-  bottom: 2px;
-  height: 20px; */
-
   color: var(--text-tertiary);
 }
 
@@ -227,13 +238,11 @@ p {
 }
 
 .card-kicker span {
+  margin-right: 4px;
+
   flex-grow: 1;
 
-  /* text-align: right; */
   font-style: italic;
-
-  /* margin-left: 8px; */
-  margin-right: 4px;
 
   color: var(--text-tertiary);
 }
@@ -260,7 +269,7 @@ p {
   border-radius: 50%;
 }
 
-/* --- */
+/* --- CARD TITLE TEXT --- */
 
 .card-title {
   display: flex;
@@ -279,11 +288,10 @@ p {
   color: var(--text-primary);
 }
 
-/* --- */
+/* --- CARD CONTENT --- */
 
-/* .card-content {
-  padding: 4px;
-} */
+.card-content {
+}
 
 .card-description {
   margin: -8px 6px 6px;
@@ -319,7 +327,7 @@ p {
   text-decoration: underline;
 }
 
-/* --- */
+/* --- CARD TASK --- */
 
 .card-task {
   display: flex;
@@ -338,7 +346,7 @@ p {
   background-color: var(--background-tertiary-hover);
 }
 
-/* --- */
+/* --- TASK STATUS --- */
 
 .card-task-status {
   display: flex;
@@ -351,18 +359,17 @@ p {
   transition: scale 0.15s;
 }
 
-.card-task-status  * {
+.card-task-status * {
   width: 18px;
   height: 18px;
   stroke-width: 2.5px;
 }
 
 .card-task-status:hover {
-  /* background-color: red; */
   scale: 1.15;
 }
 
-/* --- */
+/* --- TASK STATUS COLORS --- */
 
 /* when task is new to the user; has not been interacted with */
 .card-task-status.new {
@@ -389,7 +396,7 @@ p {
   color: orange;
 }
 
-/* --- */
+/* --- TASK CONTENT --- */
 
 .card-task-content {
   display: flex;
@@ -401,16 +408,18 @@ p {
 }
 
 .card-task-content-group {
-  white-space: pre;
   color: var(--text-secondary);
 
+  white-space: pre;
   font-size: 9pt;
 }
 
 .card-task-content-description {
+  font-size: 12pt;
+  font-weight: 500;
 }
 
-/* --- */
+/* --- TASK OPEN ICON --- */
 
 .card-task-open {
   display: flex;
@@ -432,5 +441,3 @@ p {
 .card-task:hover .card-task-open {
   scale: 1.3;
 }
-
-/* --- */

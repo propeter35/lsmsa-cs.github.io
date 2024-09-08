@@ -1,6 +1,8 @@
 :root {
-  --footer-color: white;
-  --footer-hover-color: var(--accent);
+  --accent: var(--thm-l-accent);
+
+  --footer-bg-color: var(--accent);
+  --footer-text-color: white;
 }
 
 body {
