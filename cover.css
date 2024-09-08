@@ -1,17 +1,11 @@
 :root {
-  --accent: var(--thm-l-accent);
-
-  --footer-bg-color: var(--accent);
-  --footer-text-color: white;
+  --footer-color: white;
+  --footer-hover-color: var(--accent);
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-
-  min-height: 100vh;
-  min-height: 100dvh;
-
+  background-color: var(--accent);
+  color: white;
   font-family: "Cascadia Mono", monospace;
 
   background-color: var(--accent);
@@ -58,6 +52,7 @@ a:visited {
 a:hover {
   text-decoration: none;
 
+  color: var(--accent);
   color: var(--accent);
   background-color: white;
   transition: background-color 0.2s, color 0.2s;
