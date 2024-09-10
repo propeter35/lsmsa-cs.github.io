@@ -58,19 +58,13 @@ footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
+  margin-top: 32px;
+  padding-bottom: 12px;
 
   text-align: center;
 
   background-color: var(--footer-bg-color);
-
-  padding-bottom: 12px;
-}
-
-footer.absolute {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  right: 0;
 }
 
 /* --- */
@@ -95,9 +89,7 @@ footer hr {
 
   border: solid var(--footer-text-color) 0.7px;
   opacity: 0.6;
-}
 
-footer hr {
   margin-bottom: 12px;
   transition: width 0.2s;
 }

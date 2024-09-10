@@ -6,10 +6,16 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  font-family: "Cascadia Mono", monospace;
+
   background-color: var(--accent);
   color: white;
-  font-family: "Cascadia Mono", monospace;
-  line-height: 1.1lh;
 
   user-select: none;
   overscroll-behavior-y: none;
@@ -17,12 +23,19 @@ body {
 
 /* --- */
 
+h1 {
+  margin-bottom: 16px;
+  line-height: initial;
+}
+
 hr {
   width: 24px;
 
   border: solid white 0.7px;
   opacity: 0.6;
 }
+
+/* --- */
 
 a:link {
   text-decoration: underline;
@@ -74,9 +87,10 @@ main {
   justify-content: center;
   flex-direction: column;
 
-  height: 100vh;
-  height: 100dvh;
+  flex: 1 0;
+
   text-align: center;
+  line-height: 1.1lh;
 
   padding-inline: 8px;
 }
