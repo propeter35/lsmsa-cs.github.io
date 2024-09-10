@@ -1,7 +1,29 @@
 :root {
-  --primary: #022d62;
-  --footer-color: black;
-  --footer-hover-color: white;
+  --footer-bg-color: white;
+  --footer-text-color: black;
+
+  --thm-l-accent: #022d62;
+  --thm-l-background-primary: #ccd5e0;
+  --thm-l-background-secondary: #e4e7eb;
+  --thm-l-background-tertiary: #fff;
+  --thm-l-border-primary: #bbb;
+  --thm-l-border-secondary: #ddd;
+  --thm-l-text-primary: #444;
+  --thm-l-text-secondary: #666;
+  --thm-l-text-tertiary: #bbb;
+  
+  --thm-d-accent: #3c7bc7;
+  --thm-d-background-primary: #1d1d1d;
+  --thm-d-background-secondary: #262626;
+  --thm-d-background-tertiary: #323232;
+  --thm-d-background-tertiary-hover: #444444;
+  --thm-d-background-modifier-hover: #44444480;
+  --thm-d-border-primary: #444444;
+  --thm-d-border-secondary: #3a3a3a;
+  --thm-d-text-primary: #eee;
+  --thm-d-text-secondary: #aaa;
+  --thm-d-text-tertiary: #666;
+  --thm-d-modal-backdrop: #0a0a0aa0;
 }
 
 @font-face {
@@ -39,6 +61,8 @@ footer {
 
   text-align: center;
 
+  background-color: var(--footer-bg-color);
+
   padding-bottom: 12px;
 }
 
@@ -69,7 +93,7 @@ footer.absolute {
 footer hr {
   width: 24px;
 
-  border: solid var(--footer-color) 0.7px;
+  border: solid var(--footer-text-color) 0.7px;
   opacity: 0.6;
 }
 
@@ -90,19 +114,19 @@ footer a:link {
   text-underline-offset: 2.25px;
   text-decoration-thickness: 1.5px;
 
-  color: var(--footer-color);
+  color: var(--footer-text-color);
   background-color: none;
   transition: background-color 0.2s, color 0.2s;
 }
 
 footer a:visited {
-  color: var(--footer-color);
+  color: var(--footer-text-color);
 }
 
 footer a:hover {
   text-decoration: none;
 
-  color: var(--footer-hover-color);
-  background-color: var(--footer-color);
+  color: var(--footer-bg-color);
+  background-color: var(--footer-text-color);
   transition: background-color 0.2s, color 0.2s;
 }
