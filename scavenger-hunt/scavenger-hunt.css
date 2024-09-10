@@ -11,6 +11,7 @@
   --text-primary: var(--thm-d-text-primary);
   --text-secondary: var(--thm-d-text-secondary);
   --text-tertiary: var(--thm-d-text-tertiary);
+  --modal-backdrop: var(--thm-d-modal-backdrop);
 
   --footer-bg-color: var(--background-primary);
   --footer-text-color: var(--text-primary);
@@ -146,12 +147,12 @@ p {
 
 /* --- HUNT VIEW --- */
 
-.hunt-view-wrapper {
+.hunt-board-wrapper {
   min-height: 100vh;
   background-color: var(--background-primary);
 }
 
-.hunt-view {
+.hunt-board {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -172,6 +173,13 @@ p {
 
   font-size: 18pt;
 }
+
+.hunt-category-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 
 /* --- TASK CARD --- */
 
@@ -414,7 +422,7 @@ p {
   font-size: 9pt;
 }
 
-.card-task-content-description {
+.card-task-content-name {
   font-size: 12pt;
   font-weight: 500;
 }
@@ -439,5 +447,81 @@ p {
 }
 
 .card-task:hover .card-task-open {
+  scale: 1.3;
+}
+
+/* --- MODAL --- */
+
+body:has(.modal-wrapper.open) {
+  width: calc(100vw - (100vw - 100%));
+  overflow: hidden;
+}
+
+.modal-wrapper {
+  display: none;
+
+  position: fixed;
+  /* top: 0; */
+  inset: 0;
+}
+
+.modal-wrapper.open {
+  display: block;
+}
+
+.modal-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-backdrop);
+}
+
+.modal {
+  position: relative;
+
+  min-width: 512px;
+  min-height: 256px;
+
+  background-color: var(--background-primary);
+  border-radius: 8px;
+  outline: 1px solid var(--border-primary);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+
+  color: var(--text-primary);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+  padding: 4px;
+
+  border-radius: 50%;
+
+  transition: background-color 0.15s;
+}
+
+.modal-close-button-icon {
+  width: 16px;
+  height: 16px;
+
+  color: var(--text-secondary);
+
+  transition: scale 0.15s;
+}
+
+.modal-close-button-icon * {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-close-button:hover {
+  background-color: var(--background-modifier-hover);
+}
+.modal-close-button:hover .modal-close-button-icon {
   scale: 1.3;
 }

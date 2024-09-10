@@ -21,6 +21,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
+    <script>
+      0;
+    </script>
     <nav id="main-navbar">
       <div class="inner">
         <a href="/" id="navbar-logo">
@@ -46,72 +49,87 @@
           </p>
         </div>
       </div>
-      <div class="hunt-view-wrapper">
+      <div class="hunt-board-wrapper">
         <div class="inner">
-          <div id="board" class="hunt-view">
-            <div class="hunt-category">
+          <div id="board" class="hunt-board">
+            <div class="hunt-category" id="g000000">
               <h3>Category</h3>
-              <details class="task-card" open>
-                <summary class="card-header">
-                  <div class="card-kicker">
-                    <div class="card-icon">
-                      <i data-lucide="code"></i>
+              <div class="hunt-category-cards">
+                <details class="task-card" open>
+                  <summary class="card-header">
+                    <div class="card-kicker">
+                      <div class="card-icon">
+                        <i data-lucide="code"></i>
+                      </div>
+                      <span>Coding</span>
+                      <div class="card-arrow">
+                        <i data-lucide="chevron-up"></i>
+                      </div>
                     </div>
-                    <span>Coding</span>
-                    <div class="card-arrow">
-                      <i data-lucide="chevron-up"></i>
+                    <div class="card-title">
+                      <h4>The power of Python!</h4>
+                    </div>
+                  </summary>
+                  <div class="card-content">
+                    <div class="card-description">
+                      <span>
+                        Code some scripts in the Python programming language.
+                      </span>
+                      <span class="more-info">More info...</span>
+                    </div>
+                    <div class="card-task">
+                      <div class="card-task-status pending">
+                        <i data-lucide="circle"></i>
+                      </div>
+                      <div class="card-task-content">
+                        <span class="card-task-content-group">Level 1</span>
+                        <span class="card-task-content-name">Code</span>
+                      </div>
+                      <div class="card-task-open">
+                        <i data-lucide="play"></i>
+                      </div>
+                    </div>
+                    <div class="card-task">
+                      <div class="card-task-status pending">
+                        <i data-lucide="circle"></i>
+                      </div>
+                      <div class="card-task-content">
+                        <span class="card-task-content-group">Level 2</span>
+                        <span class="card-task-content-name">Coder</span>
+                      </div>
+                      <div class="card-task-open">
+                        <i data-lucide="play"></i>
+                      </div>
+                    </div>
+                    <div class="card-task">
+                      <div class="card-task-status pending">
+                        <i data-lucide="circle"></i>
+                      </div>
+                      <div class="card-task-content">
+                        <span class="card-task-content-group">Level 3</span>
+                        <span class="card-task-content-name">Codest</span>
+                      </div>
+                      <div class="card-task-open">
+                        <i data-lucide="play"></i>
+                      </div>
                     </div>
                   </div>
-                  <div class="card-title">
-                    <h4>The power of Python!</h4>
-                  </div>
-                </summary>
-                <div class="card-content">
-                  <div class="card-description">
-                    <span>
-                      Code some scripts in the Python programming language.
-                    </span>
-                    <span class="more-info">More info...</span>
-                  </div>
-                  <div class="card-task">
-                    <div class="card-task-status pending">
-                      <i data-lucide="circle"></i>
-                    </div>
-                    <div class="card-task-content">
-                      <span class="card-task-content-group">Level 1</span>
-                      <span class="card-task-content-description">Code</span>
-                    </div>
-                    <div class="card-task-open">
-                      <i data-lucide="play"></i>
-                    </div>
-                  </div>
-                  <div class="card-task">
-                    <div class="card-task-status pending">
-                      <i data-lucide="circle"></i>
-                    </div>
-                    <div class="card-task-content">
-                      <span class="card-task-content-group">Level 2</span>
-                      <span class="card-task-content-description">Coder</span>
-                    </div>
-                    <div class="card-task-open">
-                      <i data-lucide="play"></i>
-                    </div>
-                  </div>
-                  <div class="card-task">
-                    <div class="card-task-status pending">
-                      <i data-lucide="circle"></i>
-                    </div>
-                    <div class="card-task-content">
-                      <span class="card-task-content-group">Level 3</span>
-                      <span class="card-task-content-description">Codest</span>
-                    </div>
-                    <div class="card-task-open">
-                      <i data-lucide="play"></i>
-                    </div>
-                  </div>
-                </div>
-              </details>
-              
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-wrapper">
+        <div class="modal-bg">
+          <div class="modal">
+            <div class="modal-content">
+              <h4 class="modal-title">The power of Python!</h4>
+            </div>
+            <div class="modal-close-button">
+              <div class="modal-close-button-icon">
+                <i data-lucide="x"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +144,59 @@
       </div>
     </footer>
 
-    <script src="" async defer></script>
+    <template class="template-card">
+      <details class="task-card" open>
+        <summary class="card-header">
+          <div class="card-kicker">
+            <div class="card-icon">
+              <i data-lucide="code"></i>
+            </div>
+            <span>Skills</span>
+            <div class="card-arrow">
+              <i data-lucide="chevron-up"></i>
+            </div>
+          </div>
+          <div class="card-title">
+            <h4>Title</h4>
+          </div>
+        </summary>
+        <div class="card-content">
+          <div class="card-description">
+            <span> Description </span>
+            <span class="more-info">More info...</span>
+          </div>
+          <!-- <div class="card-task">
+            <div class="card-task-status pending">
+              <i data-lucide="circle"></i>
+            </div>
+            <div class="card-task-content">
+              <span class="card-task-content-group">Discriminator: Value</span>
+              <span class="card-task-content-name">Name</span>
+            </div>
+            <div class="card-task-open">
+              <i data-lucide="play"></i>
+            </div>
+          </div> -->
+        </div>
+      </details>
+    </template>
+
+    <template class="template-task">
+      <div class="card-task">
+        <div class="card-task-status pending">
+          <i data-lucide="circle"></i>
+        </div>
+        <div class="card-task-content">
+          <span class="card-task-content-group">Discriminator: Value</span>
+          <span class="card-task-content-name">Name</span>
+        </div>
+        <div class="card-task-open">
+          <i data-lucide="play"></i>
+        </div>
+      </div>
+    </template>
+
+    <script src="index.js" async defer type="module"></script>
     <script>
       lucide.createIcons();
     </script>

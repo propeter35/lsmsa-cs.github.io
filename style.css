@@ -23,6 +23,7 @@
   --thm-d-text-primary: #eee;
   --thm-d-text-secondary: #aaa;
   --thm-d-text-tertiary: #666;
+  --thm-d-modal-backdrop: #0a0a0aa0;
 }
 
 @font-face {
