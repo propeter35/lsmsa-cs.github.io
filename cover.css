@@ -6,8 +6,12 @@
 }
 
 body {
-  background-color: var(--accent);
-  color: white;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
   font-family: "Cascadia Mono", monospace;
 
   background-color: var(--accent);

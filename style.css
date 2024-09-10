@@ -58,19 +58,12 @@ footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
+  padding-bottom: 12px;
 
   text-align: center;
 
   background-color: var(--footer-bg-color);
-
-  padding-bottom: 12px;
-}
-
-footer.absolute {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  right: 0;
 }
 
 /* --- */
