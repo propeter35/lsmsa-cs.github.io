@@ -3,19 +3,27 @@
   --footer-text-color: black;
 
   --thm-l-accent: #022d62;
-  --thm-l-background-primary: #ccd5e0;
-  --thm-l-background-secondary: #e4e7eb;
+  --thm-l-background-primary: #d4dae2;
+  --thm-l-background-secondary: #e7e9ec;
   --thm-l-background-tertiary: #fff;
+  --thm-l-background-primary-hover: #cfd7df;
+  --thm-l-background-secondary-hover: #d3d7d9;
+  --thm-l-background-tertiary-hover: #efefef;
+  --thm-l-background-modifier-hover: #bbbbbb80;
   --thm-l-border-primary: #bbb;
   --thm-l-border-secondary: #ddd;
   --thm-l-text-primary: #444;
   --thm-l-text-secondary: #666;
   --thm-l-text-tertiary: #bbb;
+  --thm-l-modal-backdrop: #444444a0;
+  --thm-l-shadow: rgba(128, 128, 128, 0.5);
   
   --thm-d-accent: #3c7bc7;
   --thm-d-background-primary: #1d1d1d;
   --thm-d-background-secondary: #262626;
   --thm-d-background-tertiary: #323232;
+  --thm-d-background-primary-hover: #222222;
+  --thm-d-background-secondary-hover: #303030;
   --thm-d-background-tertiary-hover: #444444;
   --thm-d-background-modifier-hover: #44444480;
   --thm-d-border-primary: #444444;
@@ -24,6 +32,7 @@
   --thm-d-text-secondary: #aaa;
   --thm-d-text-tertiary: #666;
   --thm-d-modal-backdrop: #0a0a0aa0;
+  --thm-d-shadow: rgba(0, 0, 0, 0.5)
 }
 
 @font-face {

@@ -67,7 +67,7 @@ export function addTask(task, card) {
   if (task.name) {
     taskClone.querySelector(".card-task-content-name").textContent = task.name;
   }
-  if (task.group.value) {
+  if (task.group) {
     taskClone.querySelector(".card-task-content-group").textContent =
       toTitleCase(task.group.discriminator) + " " + task.group.value;
   }

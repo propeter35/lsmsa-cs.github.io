@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CS Scavenger Hunt | LSMSA Computer Science Club</title>
-    <link
-      rel="shortcut icon"
-      href="assets/cs-logo/filled path.svg"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="scavenger-hunt.css" />
 
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<head>
+  <title>CS Scavenger Hunt | LSMSA Computer Science Club</title>
+  <link rel="shortcut icon" href="assets/cs-logo/filled path.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="scavenger-hunt.css" />
 
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link id="color-scheme-light" rel="stylesheet" href="color-schemes/light.css" disabled>
+  <link id="color-scheme-dark" rel="stylesheet" href="color-schemes/dark.css">
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
-  <body>
-    <script>
-      0;
-    </script>
-    <nav id="main-navbar">
-      <div class="inner">
-        <a href="/" id="navbar-logo">
-          <span>CS @ LSMSA</span>
-        </a>
-      </div>
-    </nav>
-    <main>
-      <div class="hunt-info">
-        <div class="inner">
-          <h1>Computer Science Scavenger Hunt</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            dolor suscipit in ipsum, totam culpa facere ullam cumque tempora
-            accusantium iusto cum debitis, animi impedit laudantium perspiciatis
-            vero omnis vel!
-          </p>
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script src="modules/colorScheme.js"></script>
+</head>
+
+<body>
+  <script>
+    0;
+  </script>
+  <nav id="main-navbar">
+    <div class="inner">
+      <a href="/" id="navbar-logo">
+        <span>CS @ LSMSA</span>
+      </a>
+      <button id="color-scheme-switcher">
+        <div id="color-scheme-switcher-icon">
+
+          <i class="color-scheme-icon-dark" data-lucide="moon"></i>
+          <i class="color-scheme-icon-light" data-lucide="sun"></i>
         </div>
+      </button>
+    </div>
+  </nav>
+  <main>
+    <div class="hunt-info">
+      <div class="inner">
+        <h1>Computer Science Scavenger Hunt</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          dolor suscipit in ipsum, totam culpa facere ullam cumque tempora
+          accusantium iusto cum debitis, animi impedit laudantium perspiciatis
+          vero omnis vel!
+        </p>
       </div>
-      <div class="hunt-board-wrapper">
-        <div class="inner">
-          <div id="board" class="hunt-board">
-            <!-- <div class="hunt-category" id="g00000">
+    </div>
+    <div class="hunt-board-wrapper">
+      <div class="inner">
+        <div id="board" class="hunt-board">
+          <!-- <div class="hunt-category" id="g00000">
               <h3>Category</h3>
               <div class="hunt-category-cards">
                 <details class="task-card" open>
@@ -111,10 +121,10 @@
                 </details>
               </div>
             </div> -->
-          </div>
         </div>
       </div>
-      <!-- <div class="modal-wrapper open">
+    </div>
+    <!-- <div class="modal-wrapper open">
         <div class="modal-bg">
           <div class="modal">
             <div class="modal-content">
@@ -128,46 +138,46 @@
           </div>
         </div>
       </div> -->
-    </main>
-    <footer>
-      <hr />
-      <div id="footer-content">
-        <a href="https://www.instagram.com/lsmsa.cs/">Instagram</a>
-        <a href="https://github.com/LSMSA-CS/">GitHub</a>
-        <a href="https://github.com/LSMSA-CS/lsmsa-cs.github.io/">Repository</a>
-      </div>
-    </footer>
+  </main>
+  <footer>
+    <hr />
+    <div id="footer-content">
+      <a href="https://www.instagram.com/lsmsa.cs/">Instagram</a>
+      <a href="https://github.com/LSMSA-CS/">GitHub</a>
+      <a href="https://github.com/LSMSA-CS/lsmsa-cs.github.io/">Repository</a>
+    </div>
+  </footer>
 
-    <template class="template-category">
-      <div class="hunt-category">
-        <h3>Category</h3>
-        <div class="hunt-category-cards"></div>
-      </div>
-    </template>
+  <template class="template-category">
+    <div class="hunt-category">
+      <h3>Category</h3>
+      <div class="hunt-category-cards"></div>
+    </div>
+  </template>
 
-    <template class="template-card">
-      <details class="task-card" open>
-        <summary class="card-header">
-          <div class="card-kicker">
-            <div class="card-icon">
-              <i data-lucide="code"></i>
-            </div>
-            <span>Skills</span>
-            <div class="card-arrow">
-              <i data-lucide="chevron-up"></i>
-            </div>
+  <template class="template-card">
+    <details class="task-card" open>
+      <summary class="card-header">
+        <div class="card-kicker">
+          <div class="card-icon">
+            <i data-lucide="code"></i>
           </div>
-          <div class="card-title">
-            <h4>Title</h4>
+          <span>Skills</span>
+          <div class="card-arrow">
+            <i data-lucide="chevron-up"></i>
           </div>
-        </summary>
-        <div class="card-content">
-          <div class="card-description">
-            <span> Description </span>
-            <span class="more-info">More info...</span>
-          </div>
-          <div class="card-tasks"></div>
-          <!-- <div class="card-task">
+        </div>
+        <div class="card-title">
+          <h4>Title</h4>
+        </div>
+      </summary>
+      <div class="card-content">
+        <div class="card-description">
+          <span> Description </span>
+          <span class="more-info">More info...</span>
+        </div>
+        <div class="card-tasks"></div>
+        <!-- <div class="card-task">
             <div class="card-task-status pending">
               <i data-lucide="circle"></i>
             </div>
@@ -179,31 +189,36 @@
               <i data-lucide="play"></i>
             </div>
           </div> -->
-        </div>
-      </details>
-    </template>
-
-    <template class="template-task">
-      <div class="card-task">
-        <div class="card-task-status pending">
-          <i data-lucide="circle"></i>
-        </div>
-        <div class="card-task-content">
-          <span class="card-task-content-group">Discriminator: Value</span>
-          <span class="card-task-content-name">Name</span>
-        </div>
-        <div class="card-task-open">
-          <i data-lucide="play"></i>
-        </div>
       </div>
-    </template>
+    </details>
+  </template>
 
-    <template class="template-modal">
-      <div class="modal-wrapper open">
-        <div class="modal-bg">
+  <template class="template-task">
+    <div class="card-task">
+      <div class="card-task-status pending">
+        <i data-lucide="circle"></i>
+      </div>
+      <div class="card-task-content">
+        <span class="card-task-content-group">Discriminator: Value</span>
+        <span class="card-task-content-name">Name</span>
+      </div>
+      <div class="card-task-open">
+        <i data-lucide="play"></i>
+      </div>
+    </div>
+  </template>
+
+  <template class="template-modal">
+    <div class="modal-wrapper open">
+      <div class="modal-bg">
+        <div class="modal-inner-wrapper">
           <div class="modal">
             <div class="modal-content">
-              <h4 class="modal-title">The power of Python!</h4>
+              <h4 class="modal-title">Title</h4>
+              <div class="modal-description-wrapper">
+
+                <span class="modal-description">Description</span>
+              </div>
             </div>
             <div class="modal-close-button">
               <div class="modal-close-button-icon">
@@ -213,11 +228,79 @@
           </div>
         </div>
       </div>
-    </template>
+    </div>
+  </template>
 
-    <script src="index.js" async defer type="module"></script>
-    <script>
-      lucide.createIcons();
-    </script>
-  </body>
+  <template class="template-modal-task">
+    <div class="modal-card-task-wrapper">
+      <div class="modal-card-task">
+        <div class="modal-card-task-heading">
+          <div class="modal-card-task-status pending">
+            <i data-lucide="circle"></i>
+          </div>
+          <div class="modal-card-task-heading-content">
+            <span class="modal-card-task-heading-group">Discriminator: Value</span>
+            <span class="modal-card-task-heading-name">Name</span>
+          </div>
+          <!-- <div class="modal-card-task-open">
+            <i data-lucide="play"></i>
+          </div> -->
+        </div>
+        <hr>
+        <div class="modal-card-task-content">
+          <div class="model-card-task-description-wrapper">
+
+            <span class="modal-card-task-description">
+              Description
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-card-task-submission">
+        <h5 class="modal-card-task-submission-title">How to submit</h5>
+        <div class="modal-card-task-submission-content">
+          <span class="modal-card-task-submission-description"></span>
+
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template class="template-task-resources">
+    <div class="modal-task-resources">
+      <hr>
+      <h5>
+        Need help?
+      </h5>
+      <div class="modal-task-resources-content">
+
+      </div>
+    </div>
+  </template>
+
+  <template class="template-task-resource">
+
+    <div class="modal-task-resource">
+      <a class="task-resource-link" href="https://example.com" target="_blank" rel="noopener noreferrer">
+        <div class="task-resource-header">
+          <h4 class="task-resource-title">Title</h4>
+          <div class="task-resource-link-icon">
+            <i data-lucide="external-link"></i>
+          </div>
+        </div>
+        <div task-resource-content>
+          <div class="task-resource-description-wrapper">
+            <span class="task-resource-description">Description</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </template>
+
+  <script src="index.js" async defer type="module"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
 </html>

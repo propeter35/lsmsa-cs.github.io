@@ -1,0 +1,20 @@
+:root {
+  --background-primary: var(--thm-d-background-primary);
+  --background-secondary: var(--thm-d-background-secondary);
+  --background-tertiary: var(--thm-d-background-tertiary);
+  --background-primary-hover: var(--thm-d-background-primary-hover);
+  --background-secondary-hover: var(--thm-d-background-secondary-hover);
+  --background-tertiary-hover: var(--thm-d-background-tertiary-hover);
+  --background-modifier-hover: var(--thm-d-background-modifier-hover);
+  --border-primary: var(--thm-d-border-primary);
+  --border-secondary: var(--thm-d-border-secondary);
+  --text-primary: var(--thm-d-text-primary);
+  --text-secondary: var(--thm-d-text-secondary);
+  --text-tertiary: var(--thm-d-text-tertiary);
+  --modal-backdrop: var(--thm-d-modal-backdrop);
+  --shadow: var(--thm-d-shadow);
+}
+
+.color-scheme-icon-light {
+  display: none;
+}
