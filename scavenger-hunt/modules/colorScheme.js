@@ -4,6 +4,7 @@ if (window.matchMedia) {
     ? "dark"
     : "light";
 }
+updateColorScheme();
 
 // false = light
 // true = dark

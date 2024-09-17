@@ -89,8 +89,55 @@ p {
   color: var(--text-primary);
 }
 
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* --- */
+
+html {
+  scroll-timeline: --page-scroll block;
+}
+
 body {
   background-color: var(--background-primary);
+}
+
+@-moz-keyframes body-scroll {
+  from {
+    background-color: var(--background-secondary);
+  }
+  to {
+    background-color: var(--background-primary);
+  }
+}
+
+@-webkit-keyframes body-scroll {
+  from {
+    background-color: var(--background-secondary);
+  }
+  to {
+    background-color: var(--background-primary);
+  }
+}
+
+@keyframes body-scroll {
+  from {
+    background-color: var(--background-secondary);
+  }
+  to {
+    background-color: var(--background-primary);
+  }
+}
+
+body {
+  /* background-color: var(--background-primary); */
+  animation: body-scroll auto linear;
+  animation-timeline: --page-scroll;
 }
 
 /* --- INNER DIV CLASS --- */
@@ -116,6 +163,12 @@ body {
   .inner {
     max-width: 72.7%;
   }
+}
+
+/* --- */
+
+svg .svg-content {
+  fill: var(--text-primary);
 }
 
 /* --- */
@@ -635,8 +688,8 @@ body:has(.modal-wrapper.open) {
 }
 
 .modal-close-button-icon {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
 
   color: var(--text-secondary);
 
@@ -644,8 +697,8 @@ body:has(.modal-wrapper.open) {
 }
 
 .modal-close-button-icon * {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
 }
 
 .modal-close-button:hover {
@@ -750,6 +803,8 @@ body:has(.modal-wrapper.open) {
   .modal-card-task-submission {
     margin: 6px;
     margin-top: 2px;
+    padding-left: calc(32px + 8px);
+
     width: 100%;
 
     flex: 1 2 128px;

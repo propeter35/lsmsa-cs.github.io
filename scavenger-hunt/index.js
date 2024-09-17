@@ -216,6 +216,6 @@ document.querySelectorAll("#color-scheme-switcher").forEach((element) => {
 });
 
 function toggleColorTheme() {
-  colorScheme = colorScheme == "dark" ? "light" : "dark"
+  colorScheme = colorScheme == "dark" ? "light" : "dark";
   updateColorScheme();
 }
