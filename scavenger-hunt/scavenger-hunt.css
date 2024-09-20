@@ -757,6 +757,7 @@ body:has(.modal-wrapper.open) {
 
 .modal {
   position: relative;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   margin: 2px;
   margin-top: calc(env(safe-area-inset-top) + 2px);
 
