@@ -760,7 +760,7 @@ body:has(.modal-wrapper.open) {
   margin: 2px;
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
-  margin-top: env(safe-area-inset-top);
+  /* margin-top: env(safe-area-inset-top); */
 
   width: 768px;
   /* height: 256px; */
