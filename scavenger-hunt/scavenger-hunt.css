@@ -291,6 +291,8 @@ a:hover {
 
   /* background-color: var(--background-primary); */
   background-color: var(--background-secondary);
+
+  padding-bottom: 24px;
 }
 
 .hunt-info h1 {
@@ -300,6 +302,96 @@ a:hover {
 
 .hunt-info p {
   padding-left: 12px;
+}
+
+/* --- HUNT TABS --- */
+
+.hunt-tabs {
+  min-height: 32px;
+  background-color: var(--background-secondary);
+}
+
+.hunt-tabs .inner {
+  display: flex;
+  flex-direction: row;
+
+  overflow-x: auto;
+
+  height: 100%;
+}
+
+.hunt-tab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-right: 4px;
+
+  height: calc(100% - 1px); /* subtract border-top width */
+  min-width: 128px;
+  flex-shrink: 0;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.hunt-tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 14px;
+  height: 14px;
+  padding: 8px;
+}
+
+.hunt-tab-icon * {
+  stroke-width: 2.5px;
+}
+
+.hunt-tab-name {
+  margin-right: 12px;
+}
+
+/* --- TAB STATES --- */
+
+.hunt-tab {
+  border-top: 2px solid transparent;
+
+  color: var(--text-secondary);
+
+  transition: color 0.15s, background-color 0.15s, border-top 0.15s;
+}
+
+.hunt-tab:hover:not(.disabled):not(.selected) {
+  border-top: 2px solid var(--text-tertiary);
+
+  background-color: var(--background-secondary-hover);
+}
+
+.hunt-tab.selected {
+  border-top: 2px solid var(--text-secondary);
+
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+}
+
+.hunt-tab.selected:hover {
+  border-top: 2px solid var(--accent);
+
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+}
+
+.hunt-tab.disabled {
+  color: var(--text-tertiary);
+  background-color: inherit;
+}
+
+.hunt-tab.disabled:hover {
+  background-color: var(--background-secondary-hover);
 }
 
 /* --- HUNT VIEW --- */
@@ -579,7 +671,6 @@ a:hover {
 .card-task-content-group {
   color: var(--text-secondary);
 
-  white-space: pre;
   font-size: 9pt;
 }
 
@@ -848,7 +939,6 @@ body:has(.modal-wrapper.open) {
 .modal-card-task-heading-group {
   color: var(--text-secondary);
 
-  white-space: pre;
   font-size: 9pt;
 }
 

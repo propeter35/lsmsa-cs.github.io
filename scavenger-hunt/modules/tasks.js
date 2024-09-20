@@ -2,7 +2,7 @@ export let tasks = {
   categories: [
     {
       id: "g4afcb6",
-      name: "Uncategorized",
+      name: "NONE",
       cards: [
         {
           id: "c2fff29",

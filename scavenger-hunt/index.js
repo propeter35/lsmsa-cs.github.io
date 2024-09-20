@@ -108,10 +108,12 @@ export function setupModal(modal, cardID, taskID) {
       ).textContent = task.name;
     }
     if (task.group) {
-      modalTaskClone.querySelector(
-        ".modal-card-task-heading-group"
-      ).textContent =
+      modalTaskClone.querySelector(".modal-card-task-group").textContent =
         toTitleCase(task.group.discriminator) + " " + task.group.value;
+    }
+    if (task.points) {
+      modalTaskClone.querySelector(".modal-card-task-points").textContent =
+        task.points + " pts";
     }
     if (task.description) {
       modalTaskClone.querySelector(".modal-card-task-description").innerHTML =

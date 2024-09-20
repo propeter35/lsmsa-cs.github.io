@@ -11,7 +11,11 @@ export function addCategory(category) {
   if (category.id) {
     categoryClone.id = category.id;
   }
-  if (category.name) {
+  if (!category.name || category.name == "NONE") {
+    categoryClone.querySelector(".hunt-category h3").textContent =
+      "";
+
+  } else if (category.name) {
     categoryClone.querySelector(".hunt-category h3").textContent =
       category.name;
   }
@@ -67,9 +71,17 @@ export function addTask(task, card) {
   if (task.name) {
     taskClone.querySelector(".card-task-content-name").textContent = task.name;
   }
+  // if (task.group) {
+  //   taskClone.querySelector(".card-task-content-group").textContent =
+  //     toTitleCase(task.group.discriminator) + " " + task.group.value;
+  // }
   if (task.group) {
-    taskClone.querySelector(".card-task-content-group").textContent =
+    taskClone.querySelector(".card-task-group").textContent =
       toTitleCase(task.group.discriminator) + " " + task.group.value;
+  }
+  if (task.points) {
+    taskClone.querySelector(".card-task-points").textContent =
+      task.points + " pts";
   }
 
   cardTasks.appendChild(taskClone);
