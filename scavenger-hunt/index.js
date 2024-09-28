@@ -9,15 +9,17 @@ attachModalOpeners();
 
 const main = document.querySelector("main");
 
-const modalTemplate = document.querySelector(".template-modal");
-const modalTaskTemplate = document.querySelector(".template-modal-task");
+const modalTemplate = document.querySelector("template.tem-scahoo-modal");
+const modalTaskTemplate = document.querySelector("template.tem-scahoo-modal-task");
 const modalResourcesTemplate = document.querySelector(
-  ".template-task-resources"
+  "template.tem-scahoo-task-resources"
 );
-const modalResourceTemplate = document.querySelector(".template-task-resource");
+const modalResourceTemplate = document.querySelector(
+  "template.tem-scahoo-task-resource"
+);
 
 export function setupModalListeners() {
-  document.querySelectorAll(".modal-bg").forEach((element) => {
+  document.querySelectorAll(".scahoo-modal-bg").forEach((element) => {
     element.addEventListener("mouseup", function (e) {
       if (this === e.target) {
         closeModal(this.parentElement);
@@ -25,7 +27,7 @@ export function setupModalListeners() {
     });
   });
 
-  document.querySelectorAll(".modal").forEach((element) => {
+  document.querySelectorAll(".scahoo-modal").forEach((element) => {
     element.setAttribute("role", "dialog");
     element.setAttribute("tabindex", "-1");
     element.addEventListener("keydown", function (e) {
@@ -35,7 +37,7 @@ export function setupModalListeners() {
     });
   });
 
-  document.querySelectorAll(".modal-close-button").forEach((element) => {
+  document.querySelectorAll(".scahoo-modal-close-button").forEach((element) => {
     element.addEventListener("click", function (e) {
       closeModal(this.parentElement.parentElement.parentElement.parentElement);
     });
@@ -43,14 +45,16 @@ export function setupModalListeners() {
 }
 
 export function attachModalOpeners() {
-  document.querySelectorAll(".card-description").forEach((element) => {
-    element.addEventListener("click", function (e) {
-      // if (this === e.target) {
-      openModal(this.parentElement.parentElement.id);
-      // }
+  document
+    .querySelectorAll(".scahoo-board-card-description")
+    .forEach((element) => {
+      element.addEventListener("click", function (e) {
+        // if (this === e.target) {
+        openModal(this.parentElement.parentElement.id);
+        // }
+      });
     });
-  });
-  document.querySelectorAll(".card-task").forEach((element) => {
+  document.querySelectorAll(".scahoo-board-task").forEach((element) => {
     element.addEventListener("click", function (e) {
       // if (this === e.target) {
       openModal(this.parentElement.parentElement.parentElement.id, this.id);
@@ -90,10 +94,11 @@ export function setupModal(modal, cardID, taskID) {
   }
 
   if (card.name) {
-    modal.querySelector(".modal-title").textContent = card.name;
+    modal.querySelector(".scahoo-modal-title").textContent = card.name;
   }
   if (card.description) {
-    modal.querySelector(".modal-description").textContent = card.description;
+    modal.querySelector(".scahoo-modal-description").textContent =
+      card.description;
   }
 
   if (!skipTasks) {
@@ -104,19 +109,19 @@ export function setupModal(modal, cardID, taskID) {
     }
     if (task.name) {
       modalTaskClone.querySelector(
-        ".modal-card-task-heading-name"
+        ".scahoo-modal-task-heading-name"
       ).textContent = task.name;
     }
     if (task.group) {
-      modalTaskClone.querySelector(".modal-card-task-group").textContent =
+      modalTaskClone.querySelector(".scahoo-modal-task-group").textContent =
         toTitleCase(task.group.discriminator) + " " + task.group.value;
     }
     if (task.points) {
-      modalTaskClone.querySelector(".modal-card-task-points").textContent =
+      modalTaskClone.querySelector(".scahoo-modal-task-points").textContent =
         task.points + " pts";
     }
     if (task.description) {
-      modalTaskClone.querySelector(".modal-card-task-description").innerHTML =
+      modalTaskClone.querySelector(".scahoo-modal-task-description").innerHTML =
         cleaned(task.description);
     }
     if (task.resources) {
@@ -128,48 +133,49 @@ export function setupModal(modal, cardID, taskID) {
         resourceClone =
           modalResourceTemplate.content.firstElementChild.cloneNode(true);
         if (resource.title) {
-          resourceClone.querySelector(".task-resource-title").textContent =
-            resource.title;
+          resourceClone.querySelector(
+            ".scahoo-modal-task-resource-title"
+          ).textContent = resource.title;
         }
         if (resource.description) {
           resourceClone.querySelector(
-            ".task-resource-description"
+            ".scahoo-modal-task-resource-description"
           ).textContent = resource.description;
         }
         if (resource.href) {
-          resourceClone.querySelector(".task-resource-link").href =
+          resourceClone.querySelector(".scahoo-modal-task-resource-link").href =
             resource.href;
         }
         // if (resource["link"]) {
         //   console.log(resource["link"])
-        //   resourceClone.querySelector(".task-resource-link").textContent = resource["link"];
+        //   resourceClone.querySelector(".scahoo-modal-task-resource-link").textContent = resource["link"];
         // }
 
         resourcesClone
-          .querySelector(".modal-task-resources-content")
+          .querySelector(".scahoo-modal-task-resources-content")
           .appendChild(resourceClone);
       }
 
       modalTaskClone
-        .querySelector(".modal-card-task-content")
+        .querySelector(".scahoo-modal-task-content")
         .appendChild(resourcesClone);
     }
 
     if (task.submission) {
       if (task.submission.title) {
         modalTaskClone.querySelector(
-          ".modal-card-task-submission-title"
+          ".scahoo-modal-task-submission-title"
         ).textContent = task.submission.title;
       }
       if (task.submission.type == "manual") {
         if (task.submission.description)
           modalTaskClone.querySelector(
-            ".modal-card-task-submission-description"
+            ".scahoo-modal-task-submission-description"
           ).innerHTML = cleaned(task.submission.description);
       }
     }
 
-    modal.querySelector(".modal").appendChild(modalTaskClone);
+    modal.querySelector(".scahoo-modal").appendChild(modalTaskClone);
   }
 
   return modalTaskClone;

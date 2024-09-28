@@ -1,8 +1,8 @@
-const board = document.querySelector(".hunt-board");
+const board = document.querySelector(".scahoo-board");
 
-const categoryTemplate = document.querySelector(".template-category");
-const cardTemplate = document.querySelector(".template-card");
-const taskTemplate = document.querySelector(".template-task");
+const categoryTemplate = document.querySelector("template.tem-scahoo-category");
+const cardTemplate = document.querySelector("template.tem-scahoo-board-card");
+const taskTemplate = document.querySelector("template.tem-scahoo-board-task");
 
 export function addCategory(category) {
   let categoryClone =
@@ -12,11 +12,11 @@ export function addCategory(category) {
     categoryClone.id = category.id;
   }
   if (!category.name || category.name == "NONE") {
-    categoryClone.querySelector(".hunt-category h3").textContent =
+    categoryClone.querySelector(".scahoo-category h3").textContent =
       "";
 
   } else if (category.name) {
-    categoryClone.querySelector(".hunt-category h3").textContent =
+    categoryClone.querySelector(".scahoo-category h3").textContent =
       category.name;
   }
 
@@ -26,7 +26,7 @@ export function addCategory(category) {
 export function addCard(card, category) {
   const categoryCards = board
     .querySelector("#" + category.id)
-    .querySelector(".hunt-category-cards");
+    .querySelector(".scahoo-category-cards");
 
   // requires .firstElementChild to turn DocumentFragment to HTMLElement
   let cardClone = cardTemplate.content.firstElementChild.cloneNode(true);
@@ -36,18 +36,18 @@ export function addCard(card, category) {
     cardClone.id = card.id;
   }
   if (card.skills) {
-    cardClone.querySelector(".card-kicker span").textContent = card.skills;
+    cardClone.querySelector(".scahoo-board-card-kicker span").textContent = card.skills;
   }
   if (card.name) {
-    cardClone.querySelector(".card-title h4").textContent = card.name;
+    cardClone.querySelector(".scahoo-board-card-title h4").textContent = card.name;
   }
   if (card.description) {
-    cardClone.querySelector(".card-description span").textContent =
+    cardClone.querySelector(".scahoo-board-card-description span").textContent =
       card.description;
   }
   if (card.icon) {
     cardClone
-      .querySelector(".card-icon i")
+      .querySelector(".scahoo-board-card-icon i")
       .setAttribute("data-lucide", card.icon);
   }
 
@@ -59,9 +59,9 @@ export function addCard(card, category) {
 export function addTask(task, card) {
   const cardTasks = board
     // .querySelector("#" + category.id)
-    // .querySelector(".hunt-category-cards")
+    // .querySelector(".scahoo-category-cards")
     .querySelector("#" + card.id)
-    .querySelector(".card-tasks");
+    .querySelector(".scahoo-board-tasks");
 
   let taskClone = taskTemplate.content.firstElementChild.cloneNode(true);
 
@@ -69,18 +69,18 @@ export function addTask(task, card) {
     taskClone.id = task.id;
   }
   if (task.name) {
-    taskClone.querySelector(".card-task-content-name").textContent = task.name;
+    taskClone.querySelector(".scahoo-board-task-content-name").textContent = task.name;
   }
   // if (task.group) {
-  //   taskClone.querySelector(".card-task-content-group").textContent =
+  //   taskClone.querySelector(".scahoo-board-task-content-group").textContent =
   //     toTitleCase(task.group.discriminator) + " " + task.group.value;
   // }
   if (task.group) {
-    taskClone.querySelector(".card-task-group").textContent =
+    taskClone.querySelector(".scahoo-board-task-group").textContent =
       toTitleCase(task.group.discriminator) + " " + task.group.value;
   }
   if (task.points) {
-    taskClone.querySelector(".card-task-points").textContent =
+    taskClone.querySelector(".scahoo-board-task-points").textContent =
       task.points + " pts";
   }
 

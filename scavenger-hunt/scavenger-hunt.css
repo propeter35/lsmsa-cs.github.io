@@ -1,42 +1,8 @@
 :root {
   --accent: var(--thm-d-accent);
 
-  /* --background-primary: var(--thm-d-background-primary);
-  --background-secondary: var(--thm-d-background-secondary);
-  --background-tertiary: var(--thm-d-background-tertiary);
-  --background-primary-hover: var(--thm-d-background-primary-hover);
-  --background-secondary-hover: var(--thm-d-background-secondary-hover);
-  --background-tertiary-hover: var(--thm-d-background-tertiary-hover);
-  --background-modifier-hover: var(--thm-d-background-modifier-hover);
-  --border-primary: var(--thm-d-border-primary);
-  --border-secondary: var(--thm-d-border-secondary);
-  --text-primary: var(--thm-d-text-primary);
-  --text-secondary: var(--thm-d-text-secondary);
-  --text-tertiary: var(--thm-d-text-tertiary);
-  --modal-backdrop: var(--thm-d-modal-backdrop);
-  --shadow: var(--thm-d-shadow); */
-
-  /* --background-primary: var(--thm-l-background-primary);
-  --background-secondary: var(--thm-l-background-secondary);
-  --background-tertiary: var(--thm-l-background-tertiary);
-  --background-primary-hover: var(--thm-l-background-primary-hover);
-  --background-secondary-hover: var(--thm-l-background-secondary-hover);
-  --background-tertiary-hover: var(--thm-l-background-tertiary-hover);
-  --background-modifier-hover: var(--thm-l-background-modifier-hover);
-  --border-primary: var(--thm-l-border-primary);
-  --border-secondary: var(--thm-l-border-secondary);
-  --text-primary: var(--thm-l-text-primary);
-  --text-secondary: var(--thm-l-text-secondary);
-  --text-tertiary: var(--thm-l-text-tertiary);
-  --modal-backdrop: var(--thm-l-modal-backdrop);
-  --shadow: var(--thm-l-shadow); */
-
   --footer-bg-color: var(--background-primary);
   --footer-text-color: var(--text-primary);
-
-  /* --yellow: rgba(240, 255, 105);
-  --yellow-bg: rgba(240, 255, 105, 0.2);
-  --yellow-border: rgba(240, 255, 105, 0.5); */
 
   font-family: Inter, sans-serif;
   font-feature-settings: "liga" 1, "calt" 1;
@@ -97,14 +63,19 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
-/* --- */
+body {
+  background-color: var(--background-primary);
+}
+
+/* --- BODY BACKGROUND COLOR SCROLL --- */
 
 html {
   scroll-timeline: --page-scroll block;
 }
 
 body {
-  background-color: var(--background-primary);
+  animation: body-scroll auto linear;
+  animation-timeline: --page-scroll;
 }
 
 @-moz-keyframes body-scroll {
@@ -134,12 +105,6 @@ body {
   }
 }
 
-body {
-  /* background-color: var(--background-primary); */
-  animation: body-scroll auto linear;
-  animation-timeline: --page-scroll;
-}
-
 /* --- INNER DIV CLASS --- */
 
 .inner {
@@ -167,11 +132,12 @@ body {
 
 /* --- */
 
+/* Color for SVGs in modals */
 svg .svg-content {
   fill: var(--text-primary);
 }
 
-/* --- */
+/* --- LINKS --- */
 
 a:link {
   text-decoration: underline;
@@ -226,6 +192,8 @@ a:hover {
   color: inherit;
   background-color: var(--background-secondary-hover);
 }
+
+/* --- COLOR SCHEME SWITCHER --- */
 
 #color-scheme-switcher {
   display: flex;
@@ -287,9 +255,9 @@ a:hover {
   top: 1px;
 }
 
-/* --- HUNT INFO --- */
+/* --- SCAHOO INFO --- */
 
-.hunt-info {
+.scahoo-info {
   padding-bottom: 24px;
 
   background-color: var(--background-secondary);
@@ -297,18 +265,18 @@ a:hover {
   transition: background-color 0.15s;
 }
 
-.hunt-info h1 {
+.scahoo-info h1 {
   padding-top: 16px;
   padding-bottom: 4px;
 }
 
-.hunt-info p {
+.scahoo-info p {
   padding-left: 12px;
 }
 
-/* --- HUNT TABS --- */
+/* --- SCAHOO TABS --- */
 
-.hunt-tabs {
+.scahoo-tabs {
   min-height: 32px;
 
   background-color: var(--background-secondary);
@@ -316,7 +284,7 @@ a:hover {
   transition: background-color 0.15s;
 }
 
-.hunt-tabs .inner {
+.scahoo-tabs .inner {
   display: flex;
   flex-direction: row;
 
@@ -325,7 +293,7 @@ a:hover {
   height: 100%;
 }
 
-.hunt-tab {
+.scahoo-tab {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -342,7 +310,7 @@ a:hover {
   user-select: none;
 }
 
-.hunt-tab-icon {
+.scahoo-tab-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,17 +320,17 @@ a:hover {
   padding: 8px;
 }
 
-.hunt-tab-icon * {
+.scahoo-tab-icon * {
   stroke-width: 2.5px;
 }
 
-.hunt-tab-name {
+.scahoo-tab-name {
   margin-right: 12px;
 }
 
-/* --- TAB STATES --- */
+/* --- SCAHOO TAB STATES --- */
 
-.hunt-tab {
+.scahoo-tab {
   border-top: 2px solid transparent;
 
   color: var(--text-secondary);
@@ -370,38 +338,38 @@ a:hover {
   transition: color 0.15s, background-color 0.15s, border-top 0.15s;
 }
 
-.hunt-tab:hover:not(.disabled):not(.selected) {
+.scahoo-tab:hover:not(.disabled):not(.selected) {
   border-top: 2px solid var(--text-tertiary);
 
   background-color: var(--background-secondary-hover);
 }
 
-.hunt-tab.selected {
+.scahoo-tab.selected {
   border-top: 2px solid var(--text-secondary);
 
   color: var(--text-primary);
   background-color: var(--background-primary);
 }
 
-.hunt-tab.selected:hover {
+.scahoo-tab.selected:hover {
   border-top: 2px solid var(--accent);
 
   color: var(--text-primary);
   background-color: var(--background-primary);
 }
 
-.hunt-tab.disabled {
+.scahoo-tab.disabled {
   color: var(--text-tertiary);
   background-color: inherit;
 }
 
-.hunt-tab.disabled:hover {
+.scahoo-tab.disabled:hover {
   background-color: var(--background-secondary-hover);
 }
 
-/* --- HUNT VIEW --- */
+/* --- SCAHOO BOARD --- */
 
-.hunt-board-wrapper {
+.scahoo-board-wrapper {
   min-height: 100vh;
 
   background-color: var(--background-primary);
@@ -409,37 +377,37 @@ a:hover {
   transition: background-color 0.15s;
 }
 
-.hunt-board {
+.scahoo-board {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-/* --- HUNT CATEGORY --- */
+/* --- SCAHOO CATEGORY --- */
 
-.hunt-category {
+.scahoo-category {
   display: flex;
   flex-direction: column;
 
   flex: 1 0;
 }
 
-.hunt-category h3 {
+.scahoo-category h3 {
   margin-top: 16px;
   margin-bottom: 8px;
 
   font-size: 18pt;
 }
 
-.hunt-category-cards {
+.scahoo-category-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-/* --- TASK CARD --- */
+/* --- SCAHOO BOARD CARD --- */
 
-.task-card {
+.scahoo-board-card {
   margin: 8px;
 
   width: calc(320px - 16px);
@@ -457,14 +425,14 @@ a:hover {
   transition: background-color 0.15s;
 }
 
-.task-card:hover {
+.scahoo-board-card:hover {
   outline-width: 4px;
   transition: outline-width 0.1s linear;
 }
 
-/* --- CARD HEADER --- */
+/* --- SCAHOO BOARD CARD HEADER --- */
 
-.card-header {
+.scahoo-board-card-header {
   display: flex;
   flex-direction: column;
 
@@ -475,13 +443,13 @@ a:hover {
   cursor: pointer;
 }
 
-.task-card[open] .card-header {
+.scahoo-board-card[open] .scahoo-board-card-header {
   border-radius: 8px 8px 0 0;
 }
 
-/* --- CARD KICKER --- */
+/* --- SCAHOO BOARD CARD KICKER --- */
 
-.card-kicker {
+.scahoo-board-card-kicker {
   display: flex;
   margin-left: 8px;
   margin-bottom: 4px;
@@ -494,16 +462,16 @@ a:hover {
   color: var(--text-secondary);
 }
 
-.card-icon {
+.scahoo-board-card-icon {
   color: var(--text-tertiary);
 }
 
-.card-icon * {
+.scahoo-board-card-icon * {
   height: 14px;
   stroke-width: 2.5px;
 }
 
-.card-kicker span {
+.scahoo-board-card-kicker span {
   margin-right: 4px;
 
   flex-grow: 1;
@@ -513,7 +481,7 @@ a:hover {
   color: var(--text-tertiary);
 }
 
-.card-arrow * {
+.scahoo-board-card-arrow * {
   height: 14px;
   width: 14px;
   stroke-width: 2.5px;
@@ -521,29 +489,37 @@ a:hover {
   transition: scale 0.3s;
 }
 
-.task-card .card-header .card-kicker .card-arrow {
+.scahoo-board-card
+  .scahoo-board-card-header
+  .scahoo-board-card-kicker
+  .scahoo-board-card-arrow {
   transition: scale 0.3s, rotate 0.1s ease-out;
   rotate: 0deg;
 }
 
-.task-card[open] .card-header .card-kicker .card-arrow {
+.scahoo-board-card[open]
+  .scahoo-board-card-header
+  .scahoo-board-card-kicker
+  .scahoo-board-card-arrow {
   rotate: -180deg;
 }
 
-.card-header:hover .card-kicker .card-arrow {
+.scahoo-board-card-header:hover
+  .scahoo-board-card-kicker
+  .scahoo-board-card-arrow {
   scale: 1.5;
   border-radius: 50%;
 }
 
-/* --- CARD TITLE TEXT --- */
+/* --- SCAHOO BOARD CARD TITLE TEXT --- */
 
-.card-title {
+.scahoo-board-card-title {
   display: flex;
   flex-direction: row;
   align-items: start;
 }
 
-.card-title h4 {
+.scahoo-board-card-title h4 {
   margin: 0;
   margin-left: 8px;
   padding: 0;
@@ -554,30 +530,29 @@ a:hover {
   color: var(--text-primary);
 }
 
-/* --- CARD CONTENT --- */
+/* --- SCAHOO BOARD CARD CONTENT --- */
 
-/* .card-content {
-} */
+/* .scahoo-board-card-content {} */
 
-.card-description {
+.scahoo-board-card-description {
   margin: -8px 6px 6px;
 
   padding: 8px;
   padding-left: 12px;
 
   font-size: 10pt;
-  /* color: var(--text-secondary); */
+  color: var(--text-secondary);
 
   cursor: pointer;
   border-radius: 8px;
   transition: background-color 0.15s;
 }
 
-.card-description:hover {
+.scahoo-board-card-description:hover {
   background-color: var(--background-modifier-hover);
 }
 
-.card-description .more-info {
+.scahoo-board-card-description .more-info {
   user-select: none;
 
   font-style: italic;
@@ -589,13 +564,13 @@ a:hover {
   transition: text-decoration 0.15s;
 }
 
-.card-description:hover .more-info {
+.scahoo-board-card-description:hover .more-info {
   text-decoration: underline;
 }
 
-/* --- CARD TASK --- */
+/* --- SCAHOO BOARD TASK --- */
 
-.card-task {
+.scahoo-board-task {
   display: flex;
   min-height: 48px;
 
@@ -608,13 +583,13 @@ a:hover {
   transition: background-color 0.15s;
 }
 
-.card-task:hover {
+.scahoo-board-task:hover {
   background-color: var(--background-tertiary-hover);
 }
 
-/* --- TASK STATUS --- */
+/* --- SCAHOO BOARD TASK STATUS --- */
 
-.card-task-status {
+.scahoo-board-task-status {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -627,46 +602,46 @@ a:hover {
   transition: scale 0.15s;
 }
 
-.card-task-status * {
+.scahoo-board-task-status * {
   width: 18px;
   height: 18px;
   stroke-width: 2.5px;
 }
 
-.card-task-status:hover {
+.scahoo-board-task-status:hover {
   scale: 1.15;
 }
 
-/* --- TASK STATUS COLORS --- */
+/* --- SCAHOO BOARD TASK STATUS COLORS --- */
 
 /* when task is new to the user; has not been interacted with */
-.card-task-status.new {
+.scahoo-board-task-status.new {
   color: var(--accent);
 }
 
 /* when task status is Not Started */
-.card-task-status.pending {
+.scahoo-board-task-status.pending {
   color: var(--text-secondary);
 }
 
 /* when task status is Work in Progress */
-.card-task-status.working {
+.scahoo-board-task-status.working {
   color: yellow;
 }
 
 /* when task is Done */
-.card-task-status.done {
+.scahoo-board-task-status.done {
   color: limegreen;
 }
 
 /* when task status is unknown */
-.card-task-status.unknown {
+.scahoo-board-task-status.unknown {
   color: orange;
 }
 
-/* --- TASK CONTENT --- */
+/* --- SCAHOO BOARD TASK CONTENT --- */
 
-.card-task-content {
+.scahoo-board-task-content {
   display: flex;
   align-items: left;
   /* justify-content: center; */
@@ -678,20 +653,20 @@ a:hover {
   padding: 8px 0;
 }
 
-.card-task-content-group {
+.scahoo-board-task-content-group {
   color: var(--text-secondary);
 
   font-size: 9pt;
 }
 
-.card-task-content-name {
+.scahoo-board-task-content-name {
   font-size: 12pt;
   font-weight: 500;
 }
 
-/* --- TASK OPEN ICON --- */
+/* --- SCAHOO BOARD TASK OPEN ICON --- */
 
-.card-task-open {
+.scahoo-board-task-open {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -706,23 +681,23 @@ a:hover {
   transition: scale 0.15s, color 0.15s;
 }
 
-.card-task-open * {
+.scahoo-board-task-open * {
   height: 14px;
 }
 
-.card-task:hover .card-task-open {
+.scahoo-board-task:hover .scahoo-board-task-open {
   scale: 1.3;
   color: var(--accent);
 }
 
-/* --- MODAL --- */
+/* --- SCAHOO MODAL --- */
 
-body:has(.modal-wrapper.open) {
+body:has(.scahoo-modal-wrapper.open) {
   width: calc(100vw - (100vw - 100%));
   overflow: hidden;
 }
 
-.modal-wrapper {
+.scahoo-modal-wrapper {
   display: none;
 
   position: fixed;
@@ -732,11 +707,11 @@ body:has(.modal-wrapper.open) {
   z-index: 5;
 }
 
-.modal-wrapper.open {
+.scahoo-modal-wrapper.open {
   display: block;
 }
 
-.modal-bg {
+.scahoo-modal-bg {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -746,7 +721,7 @@ body:has(.modal-wrapper.open) {
   background-color: var(--modal-backdrop);
 }
 
-.modal-inner-wrapper {
+.scahoo-modal-inner-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -755,14 +730,14 @@ body:has(.modal-wrapper.open) {
   max-height: 100vh;
 }
 
-.modal {
+.scahoo-modal {
   position: relative;
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
   margin: 2px;
   margin-top: calc(env(safe-area-inset-top) + 2px);
 
   width: 768px;
-  /* height: 256px; */
 
   max-width: 100vw;
   max-height: 100vh;
@@ -777,9 +752,9 @@ body:has(.modal-wrapper.open) {
   overflow-y: auto;
 }
 
-/* --- */
+/* --- SCAHOO MODAL CLOSE BUTTON --- */
 
-.modal-close-button {
+.scahoo-modal-close-button {
   position: absolute;
   top: 4px;
   right: 4px;
@@ -791,7 +766,7 @@ body:has(.modal-wrapper.open) {
   transition: background-color 0.15s;
 }
 
-.modal-close-button-icon {
+.scahoo-modal-close-button-icon {
   width: 24px;
   height: 24px;
 
@@ -800,30 +775,26 @@ body:has(.modal-wrapper.open) {
   transition: scale 0.15s;
 }
 
-.modal-close-button-icon * {
+.scahoo-modal-close-button-icon * {
   width: 24px;
   height: 24px;
 }
 
-.modal-close-button:hover {
+.scahoo-modal-close-button:hover {
   background-color: var(--background-modifier-hover);
 }
-.modal-close-button:hover .modal-close-button-icon {
+.scahoo-modal-close-button:hover .scahoo-modal-close-button-icon {
   scale: 1.3;
 }
 
-/* --- */
+/* --- SCAHOO MODAL CONTENT --- */
 
-.modal-content {
+.scahoo-modal-header {
   padding: 16px;
-  /* height: 100%; */
-
-  /* position: relative; */
 }
 
-.modal-title {
+.scahoo-modal-title {
   margin: 0;
-  /* margin-left: 8px; */
   padding: 8px 0;
 
   font-size: 18pt;
@@ -832,17 +803,11 @@ body:has(.modal-wrapper.open) {
   color: var(--text-primary);
 }
 
-.modal-description {
-}
+/* .scahoo-modal-description {} */
 
-/* .modal-content span {
-} */
+/* --- SCAHOO MODAL TASK STATUS --- */
 
-/* --- */
-
-/* --- TASK STATUS --- */
-
-.modal-card-task-status {
+.scahoo-modal-task-status {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -853,25 +818,25 @@ body:has(.modal-wrapper.open) {
   transition: scale 0.15s;
 }
 
-.modal-card-task-status * {
+.scahoo-modal-task-status * {
   width: 18px;
   height: 18px;
   stroke-width: 2.5px;
 }
 
-.modal-card-task-status:hover {
+.scahoo-modal-task-status:hover {
   scale: 1.15;
 }
 
-/* --- CARD TASK --- */
+/* --- SCAHOO MODAL TASK --- */
 
-.modal-card-task-wrapper {
+.scahoo-modal-task-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.modal-card-task {
+.scahoo-modal-task {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -887,7 +852,14 @@ body:has(.modal-wrapper.open) {
   outline: 1px solid var(--border-primary);
 }
 
-.modal-card-task-submission {
+.scahoo-modal-task hr {
+  margin: 8px auto;
+  width: calc(100% - 44px - 16px);
+}
+
+/* --- SCAHOO MODAL TASK SUBMISSION --- */
+
+.scahoo-modal-task-submission {
   padding: 8px;
   margin: 6px;
   margin-left: 2px;
@@ -904,7 +876,7 @@ body:has(.modal-wrapper.open) {
 }
 
 @media screen and (max-width: 625px) {
-  .modal-card-task-submission {
+  .scahoo-modal-task-submission {
     margin: 6px;
     margin-top: 2px;
     padding-left: calc(32px + 8px);
@@ -917,30 +889,30 @@ body:has(.modal-wrapper.open) {
   }
 }
 
-.modal-card-task-submission-title {
+.scahoo-modal-task-submission-title {
   padding: 0;
   font-size: 12pt;
   color: var(--text-primary);
 }
 
-.modal-card-task-submission-content {
+.scahoo-modal-task-submission-content {
   padding-top: 12px;
 }
 
-.modal-card-task-submission-description {
+.scahoo-modal-task-submission-description {
   font-size: 10pt;
   color: var(--text-primary);
 }
 
-/* --- TASK HEADING --- */
+/* --- SCAHOO MODAL TASK HEADING --- */
 
-.modal-card-task-heading {
+.scahoo-modal-task-heading {
   display: flex;
   height: 48px;
   width: 100%;
 }
 
-.modal-card-task-heading-content {
+.scahoo-modal-task-heading-content {
   display: flex;
   align-items: left;
   justify-content: center;
@@ -949,82 +921,46 @@ body:has(.modal-wrapper.open) {
   flex: 1 0;
 }
 
-.modal-card-task-heading-group {
+.scahoo-modal-task-heading-group {
   color: var(--text-secondary);
 
   font-size: 9pt;
 }
 
-.modal-card-task-heading-name {
+.scahoo-modal-task-heading-name {
   font-size: 12pt;
   font-weight: bold;
 }
 
-/* --- TASK OPEN ICON --- */
+/* --- SCAHOO MODAL TASK CONTENT --- */
 
-/* .modal-card-task-open {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100%;
-  width: calc(8px + 32px);
-
-  color: var(--text-secondary);
-
-  transition: scale 0.15s;
-}
-
-.modal-card-task-open * {
-  height: 14px;
-}
-
-.modal-card-task:hover .modal-card-task-open {
-  scale: 1.3;
-} */
-
-/* --- */
-
-.modal-card-task hr {
-  margin: 8px auto;
-  width: calc(100% - 44px - 16px);
-}
-
-/* --- */
-
-.modal-card-task-content {
+.scahoo-modal-task-content {
   padding: 8px;
   min-height: 128px;
 }
 
-.model-card-task-description-wrapper {
+.scahoo-modal-task-description-wrapper {
   padding-left: 32px;
 }
 
-.modal-card-task-description {
+.scahoo-modal-task-description {
   font-size: 10pt;
 }
 
-/* --- */
+/* --- SCAHOO MODAL TASK RESOURCES --- */
 
-.modal-task-resources {
+.scahoo-modal-task-resources {
   margin-top: 16px;
 
-  /* padding: 8px; */
-
-  /* min-height: 64px; */
-
-  /* background-color: var(--yellow-bg); */
   border-radius: 8px;
-  /* outline: 1px solid var(--yellow-border); */
 }
 
-.modal-task-resources hr {
+.scahoo-modal-task-resources hr {
   margin: 8px auto;
   width: calc(100% - 44px);
 }
 
-.modal-task-resources h5 {
+.scahoo-modal-task-resources h5 {
   margin-left: 32px;
   margin-top: 12px;
   padding: 0;
@@ -1033,13 +969,13 @@ body:has(.modal-wrapper.open) {
   /* margin-left: 8px; */
 }
 
-.modal-task-resources-content {
+.scahoo-modal-task-resources-content {
   margin-left: calc(32px + 8px);
 }
 
-/* --- */
+/* --- SCAHOO MODAL TASK RESOURCE ---*/
 
-.modal-task-resource {
+.scahoo-modal-task-resource {
   margin-top: 12px;
   padding: 8px;
 
@@ -1050,41 +986,41 @@ body:has(.modal-wrapper.open) {
   transition: background-color 0.15s;
 }
 
-.modal-task-resource:hover {
+.scahoo-modal-task-resource:hover {
   background-color: var(--background-secondary-hover);
 }
 
-.task-resource-header {
+.scahoo-modal-task-resource-header {
   display: flex;
 }
 
-.task-resource-title {
+.scahoo-modal-task-resource-title {
   padding: 0;
   font-size: 10pt;
 }
 
-.task-resource-link-icon * {
+.scahoo-modal-task-resource-link-icon * {
   height: 14px;
   stroke-width: 2.5px;
 }
 
-.task-resource-description {
+.scahoo-modal-task-resource-description {
   font-size: 9pt;
   margin-left: 4px;
   color: var(--text-secondary);
 }
 
-/* --- */
+/* --- SCAHOO MODAL TASK RESOURCE LINK --- */
 
-.task-resource-link:link {
+.scahoo-modal-task-resource-link:link {
   text-decoration: none;
   color: var(--text-primary);
 }
 
-.task-resource-link:visited {
+.scahoo-modal-task-resource-link:visited {
   color: var(--text-primary);
 }
 
-.task-resource-link:hover {
-  /* text-decoration: none; */
+.scahoo-modal-task-resource-link:hover {
+  text-decoration: none;
 }

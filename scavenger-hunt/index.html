@@ -43,7 +43,7 @@
     </div>
   </nav>
   <main>
-    <div class="hunt-info">
+    <div class="scahoo-info">
       <div class="inner">
         <h1>Computer Science Scavenger Hunt</h1>
         <p>
@@ -53,114 +53,34 @@
         </p>
       </div>
     </div>
-    <div class="hunt-tabs">
+    <div class="scahoo-tabs">
       <div class="inner">
-        <div class="hunt-tab selected">
-          <div class="hunt-tab-icon">
+        <div class="scahoo-tab selected">
+          <div class="scahoo-tab-icon">
             <i data-lucide="layout-grid"></i>
           </div>
-          <span class="hunt-tab-name">Board</span>
+          <span class="scahoo-tab-name">Board</span>
         </div>
-        <div class="hunt-tab disabled">
-          <div class="hunt-tab-icon">
+        <div class="scahoo-tab disabled">
+          <div class="scahoo-tab-icon">
             <i data-lucide="trophy"></i>
           </div>
-          <span class="hunt-tab-name">Leaderboard (WIP)</span>
+          <span class="scahoo-tab-name">Leaderboard (WIP)</span>
         </div>
-        <div class="hunt-tab disabled">
-          <div class="hunt-tab-icon">
+        <div class="scahoo-tab disabled">
+          <div class="scahoo-tab-icon">
             <i data-lucide="info"></i>
           </div>
-          <span class="hunt-tab-name">About (WIP)</span>
+          <span class="scahoo-tab-name">About (WIP)</span>
         </div>
       </div>
-
     </div>
-    <div class="hunt-board-wrapper">
+    <div class="scahoo-board-wrapper">
       <div class="inner">
-        <div id="board" class="hunt-board">
-          <!-- <div class="hunt-category" id="g00000">
-              <h3>Category</h3>
-              <div class="hunt-category-cards">
-                <details class="task-card" open>
-                  <summary class="card-header">
-                    <div class="card-kicker">
-                      <div class="card-icon">
-                        <i data-lucide="code"></i>
-                      </div>
-                      <span>Coding</span>
-                      <div class="card-arrow">
-                        <i data-lucide="chevron-up"></i>
-                      </div>
-                    </div>
-                    <div class="card-title">
-                      <h4>The power of Python!</h4>
-                    </div>
-                  </summary>
-                  <div class="card-content">
-                    <div class="card-description">
-                      <span>
-                        Code some scripts in the Python programming language.
-                      </span>
-                      <span class="more-info">More info...</span>
-                    </div>
-                    <div class="card-task">
-                      <div class="card-task-status pending">
-                        <i data-lucide="circle"></i>
-                      </div>
-                      <div class="card-task-content">
-                        <span class="card-task-content-group">Level 1</span>
-                        <span class="card-task-content-name">Code</span>
-                      </div>
-                      <div class="card-task-open">
-                        <i data-lucide="play"></i>
-                      </div>
-                    </div>
-                    <div class="card-task">
-                      <div class="card-task-status pending">
-                        <i data-lucide="circle"></i>
-                      </div>
-                      <div class="card-task-content">
-                        <span class="card-task-content-group">Level 2</span>
-                        <span class="card-task-content-name">Coder</span>
-                      </div>
-                      <div class="card-task-open">
-                        <i data-lucide="play"></i>
-                      </div>
-                    </div>
-                    <div class="card-task">
-                      <div class="card-task-status pending">
-                        <i data-lucide="circle"></i>
-                      </div>
-                      <div class="card-task-content">
-                        <span class="card-task-content-group">Level 3</span>
-                        <span class="card-task-content-name">Codest</span>
-                      </div>
-                      <div class="card-task-open">
-                        <i data-lucide="play"></i>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-              </div>
-            </div> -->
+        <div class="scahoo-board">
         </div>
       </div>
     </div>
-    <!-- <div class="modal-wrapper open">
-        <div class="modal-bg">
-          <div class="modal">
-            <div class="modal-content">
-              <h4 class="modal-title">The power of Python!</h4>
-            </div>
-            <div class="modal-close-button">
-              <div class="modal-close-button-icon">
-                <i data-lucide="x"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
   </main>
   <footer>
     <hr />
@@ -171,84 +91,71 @@
     </div>
   </footer>
 
-  <template class="template-category">
-    <div class="hunt-category">
+  <template class="tem-scahoo-category">
+    <div class="scahoo-category">
       <h3>Category</h3>
-      <div class="hunt-category-cards"></div>
+      <div class="scahoo-category-cards"></div>
     </div>
   </template>
 
-  <template class="template-card">
-    <details class="task-card" open>
-      <summary class="card-header">
-        <div class="card-kicker">
-          <div class="card-icon">
+  <template class="tem-scahoo-board-card">
+    <details class="scahoo-board-card" open>
+      <summary class="scahoo-board-card-header">
+        <div class="scahoo-board-card-kicker">
+          <div class="scahoo-board-card-icon">
             <i data-lucide="code"></i>
           </div>
           <span>Skills</span>
-          <div class="card-arrow">
+          <div class="scahoo-board-card-arrow">
             <i data-lucide="chevron-up"></i>
           </div>
         </div>
-        <div class="card-title">
+        <div class="scahoo-board-card-title">
           <h4>Title</h4>
         </div>
       </summary>
-      <div class="card-content">
-        <div class="card-description">
+      <div class="scahoo-board-card-content">
+        <div class="scahoo-board-card-description">
           <span> Description </span>
           <span class="more-info">More info...</span>
         </div>
-        <div class="card-tasks"></div>
-        <!-- <div class="card-task">
-            <div class="card-task-status pending">
-              <i data-lucide="circle"></i>
-            </div>
-            <div class="card-task-content">
-              <span class="card-task-content-group">Discriminator: Value</span>
-              <span class="card-task-content-name">Name</span>
-            </div>
-            <div class="card-task-open">
-              <i data-lucide="play"></i>
-            </div>
-          </div> -->
+        <div class="scahoo-board-tasks"></div>
       </div>
     </details>
   </template>
 
-  <template class="template-task">
-    <div class="card-task">
-      <div class="card-task-status pending">
+  <template class="tem-scahoo-board-task">
+    <div class="scahoo-board-task">
+      <div class="scahoo-board-task-status pending">
         <i data-lucide="circle"></i>
       </div>
-      <div class="card-task-content">
-        <div class="card-task-content-group">
-          <span class="card-task-group">Discriminator: Value</span>
+      <div class="scahoo-board-task-content">
+        <div class="scahoo-board-task-content-group">
+          <span class="scahoo-board-task-group">Discriminator: Value</span>
           <span> • </span>
-          <span class="card-task-points">0 pts</span>
+          <span class="scahoo-board-task-points">0 pts</span>
         </div>
-        <span class="card-task-content-name">Name</span>
+        <span class="scahoo-board-task-content-name">Name</span>
       </div>
-      <div class="card-task-open">
+      <div class="scahoo-board-task-open">
         <i data-lucide="play"></i>
       </div>
     </div>
   </template>
 
-  <template class="template-modal">
-    <div class="modal-wrapper open">
-      <div class="modal-bg">
-        <div class="modal-inner-wrapper">
-          <div class="modal">
-            <div class="modal-content">
-              <h4 class="modal-title">Title</h4>
-              <div class="modal-description-wrapper">
-
-                <span class="modal-description">Description</span>
+  <template class="tem-scahoo-modal">
+    <div class="scahoo-modal-wrapper open">
+      <div class="scahoo-modal-bg">
+        <div class="scahoo-modal-inner-wrapper">
+          <div class="scahoo-modal">
+            <div class="scahoo-modal-header">
+              <h4 class="scahoo-modal-title">Title</h4>
+              <div class="scahoo-modal-description-wrapper">
+                <span class="scahoo-modal-description">Description</span>
               </div>
             </div>
-            <div class="modal-close-button">
-              <div class="modal-close-button-icon">
+            <div class="scahoo-modal-close-button">
+              <div class="scahoo-modal-close-button-icon">
                 <i data-lucide="x"></i>
               </div>
             </div>
@@ -258,71 +165,61 @@
     </div>
   </template>
 
-  <template class="template-modal-task">
-    <div class="modal-card-task-wrapper">
-      <div class="modal-card-task">
-        <div class="modal-card-task-heading">
-          <div class="modal-card-task-status pending">
+  <template class="tem-scahoo-modal-task">
+    <div class="scahoo-modal-task-wrapper">
+      <div class="scahoo-modal-task">
+        <div class="scahoo-modal-task-heading">
+          <div class="scahoo-modal-task-status pending">
             <i data-lucide="circle"></i>
           </div>
-          <div class="modal-card-task-heading-content">
-            <!-- <span class="modal-card-task-heading-group">Discriminator: Value</span> -->
-            <div class="modal-card-task-heading-group">
-              <span class="modal-card-task-group">Discriminator: Value</span>
+          <div class="scahoo-modal-task-heading-content">
+            <div class="scahoo-modal-task-heading-group">
+              <span class="scahoo-modal-task-group">Discriminator: Value</span>
               <span> • </span>
-              <span class="modal-card-task-points">0 pts</span>
+              <span class="scahoo-modal-task-points">0 pts</span>
             </div>
-            <span class="modal-card-task-heading-name">Name</span>
+            <span class="scahoo-modal-task-heading-name">Name</span>
           </div>
-          <!-- <div class="modal-card-task-open">
-            <i data-lucide="play"></i>
-          </div> -->
         </div>
         <hr>
-        <div class="modal-card-task-content">
-          <div class="model-card-task-description-wrapper">
-
-            <span class="modal-card-task-description">
+        <div class="scahoo-modal-task-content">
+          <div class="scahoo-modal-task-description-wrapper">
+            <span class="scahoo-modal-task-description">
               Description
             </span>
           </div>
         </div>
       </div>
-      <div class="modal-card-task-submission">
-        <h5 class="modal-card-task-submission-title">How to submit</h5>
-        <div class="modal-card-task-submission-content">
-          <span class="modal-card-task-submission-description"></span>
-
+      <div class="scahoo-modal-task-submission">
+        <h5 class="scahoo-modal-task-submission-title">How to submit</h5>
+        <div class="scahoo-modal-task-submission-content">
+          <span class="scahoo-modal-task-submission-description"></span>
         </div>
       </div>
     </div>
   </template>
 
-  <template class="template-task-resources">
-    <div class="modal-task-resources">
+  <template class="tem-scahoo-task-resources">
+    <div class="scahoo-modal-task-resources">
       <hr>
-      <h5>
-        Need help?
-      </h5>
-      <div class="modal-task-resources-content">
-
+      <h5>Need help?</h5>
+      <div class="scahoo-modal-task-resources-content">
       </div>
     </div>
   </template>
 
-  <template class="template-task-resource">
-
-    <div class="modal-task-resource">
-      <a class="task-resource-link" href="https://example.com" target="_blank" rel="noopener noreferrer">
-        <div class="task-resource-header">
-          <h4 class="task-resource-title">Title</h4>
-          <div class="task-resource-link-icon">
+  <template class="tem-scahoo-task-resource">
+    <div class="scahoo-modal-task-resource">
+      <a class="scahoo-modal-task-resource-link" href="https://example.com" target="_blank" rel="noopener noreferrer">
+        <div class="scahoo-modal-task-resource-header">
+          <h4 class="scahoo-modal-task-resource-title">Title</h4>
+          <div class="scahoo-modal-task-resource-link-icon">
             <i data-lucide="external-link"></i>
           </div>
         </div>
         <div task-resource-content>
-          <div class="task-resource-description-wrapper">
-            <span class="task-resource-description">Description</span>
+          <div class="scahoo-modal-task-resource-description-wrapper">
+            <span class="scahoo-modal-task-resource-description">Description</span>
           </div>
         </div>
       </a>
