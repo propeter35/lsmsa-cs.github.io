@@ -37,7 +37,7 @@
 
 @font-face {
   font-family: "Cascadia Mono";
-  src: local("Cascadia Mono"), url(assets/fonts/CascadiaMono.ttf);
+  src: local("Cascadia Mono"), url(/assets/fonts/CascadiaMono.ttf);
 }
 
 body,
