@@ -1,4 +1,4 @@
-import { tasks } from "./modules/tasks.js";
+import { tasks } from "./data/tasks.js";
 import { drawBoard } from "./modules/drawBoard.js";
 // import { attachModalOpeners, openModal, setupModalListeners } from "./modules/modals.js";
 

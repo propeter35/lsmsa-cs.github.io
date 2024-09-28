@@ -17,7 +17,7 @@
   --thm-l-text-tertiary: #bbb;
   --thm-l-modal-backdrop: #444444a0;
   --thm-l-shadow: rgba(128, 128, 128, 0.5);
-  
+
   --thm-d-accent: #3c7bc7;
   --thm-d-background-primary: #1d1d1d;
   --thm-d-background-secondary: #262626;
@@ -32,7 +32,7 @@
   --thm-d-text-secondary: #aaa;
   --thm-d-text-tertiary: #666;
   --thm-d-modal-backdrop: #0a0a0aa0;
-  --thm-d-shadow: rgba(0, 0, 0, 0.5)
+  --thm-d-shadow: rgba(0, 0, 0, 0.5);
 }
 
 @font-face {
@@ -67,7 +67,7 @@ footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
+
   padding-bottom: 12px;
 
   text-align: center;
@@ -81,7 +81,11 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+
   flex-direction: row;
+  flex-wrap: wrap;
+
+  row-gap: 16px;
 
   text-align: center;
 }

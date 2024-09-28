@@ -1,6 +1,8 @@
 /* --- SCAHOO BOARD --- */
 
 .scahoo-board {
+  margin-bottom: 24px;
+
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -200,6 +202,8 @@
   background-color: var(--background-tertiary);
   border-radius: 8px;
   outline: 1px solid var(--border-primary);
+
+  cursor: pointer;
 
   transition: background-color 0.15s;
 }
