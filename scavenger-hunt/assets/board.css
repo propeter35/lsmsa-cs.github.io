@@ -1,13 +1,4 @@
-
 /* --- SCAHOO BOARD --- */
-
-.scahoo-board-wrapper {
-  min-height: 100vh;
-
-  background-color: var(--background-primary);
-
-  transition: background-color 0.15s;
-}
 
 .scahoo-board {
   display: flex;

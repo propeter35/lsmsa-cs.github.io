@@ -366,3 +366,13 @@ a:hover {
 .scahoo-tab.disabled:hover {
   background-color: var(--background-secondary-hover);
 }
+
+/* --- SCAHOO TAB CONTENT */
+
+.scahoo-tab-content {
+  min-height: 100vh;
+
+  background-color: var(--background-primary);
+
+  transition: background-color 0.15s;
+}
