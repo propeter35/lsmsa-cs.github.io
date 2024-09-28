@@ -367,7 +367,8 @@ a.scahoo-tab.disabled {
 }
 
 a.scahoo-tab.disabled:hover {
-  background-color: var(--background-secondary-hover);
+  /* background-color: var(--background-secondary-hover); */
+  cursor: not-allowed;
 }
 
 /* --- SCAHOO TAB CONTENT */
