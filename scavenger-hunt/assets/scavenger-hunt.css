@@ -293,7 +293,7 @@ a:hover {
   height: 100%;
 }
 
-.scahoo-tab {
+a.scahoo-tab {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -304,6 +304,7 @@ a:hover {
   min-width: 128px;
   flex-shrink: 0;
 
+  text-decoration: none;
   white-space: nowrap;
 
   cursor: pointer;
@@ -330,7 +331,7 @@ a:hover {
 
 /* --- SCAHOO TAB STATES --- */
 
-.scahoo-tab {
+a.scahoo-tab {
   border-top: 2px solid transparent;
 
   color: var(--text-secondary);
@@ -338,32 +339,34 @@ a:hover {
   transition: color 0.15s, background-color 0.15s, border-top 0.15s;
 }
 
-.scahoo-tab:hover:not(.disabled):not(.selected) {
+a.scahoo-tab:hover:not(.disabled):not(.selected) {
   border-top: 2px solid var(--text-tertiary);
 
   background-color: var(--background-secondary-hover);
 }
 
-.scahoo-tab.selected {
+a.scahoo-tab.selected {
   border-top: 2px solid var(--text-secondary);
 
   color: var(--text-primary);
   background-color: var(--background-primary);
 }
 
-.scahoo-tab.selected:hover {
+a.scahoo-tab.selected:hover {
   border-top: 2px solid var(--accent);
 
   color: var(--text-primary);
   background-color: var(--background-primary);
 }
 
-.scahoo-tab.disabled {
+a.scahoo-tab.disabled {
   color: var(--text-tertiary);
   background-color: inherit;
+
+  cursor: default;
 }
 
-.scahoo-tab.disabled:hover {
+a.scahoo-tab.disabled:hover {
   background-color: var(--background-secondary-hover);
 }
 
