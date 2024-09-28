@@ -38,19 +38,17 @@
 
   background-color: var(--background-secondary);
   border-radius: 8px;
-
   outline: 1px solid var(--border-primary);
-  transition: outline-width 0.3s ease-in;
 
   color: var(--text-primary);
   box-shadow: 0 0 8px var(--shadow);
 
-  transition: background-color 0.15s;
+  transition: outline-width 0.3s ease-in, background-color 0.15s;
 }
 
 .scahoo-board-card:hover {
   outline-width: 4px;
-  transition: outline-width 0.1s linear;
+  transition: outline-width 0.1s linear, background-color 0.15s;
 }
 
 /* --- SCAHOO BOARD CARD HEADER --- */
