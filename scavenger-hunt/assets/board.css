@@ -2,10 +2,18 @@
 
 .scahoo-board {
   margin-bottom: 24px;
+  padding-inline: 16px;
 
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  overflow-x: auto;
+}
+
+/* Replaced by .scahoo-board {padding-inline: 16px;} to remove margins on sides when overflow-x scrolling */
+.scahoo-tab-content .inner {
+  padding: 0;
 }
 
 /* --- SCAHOO CATEGORY --- */
