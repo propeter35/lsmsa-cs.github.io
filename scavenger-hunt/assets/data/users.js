@@ -1,4 +1,6 @@
-export let users = [
+export let users = [];
+
+export let usersTest = [
   {
     name: "John Doe",
     type: "individual",

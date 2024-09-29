@@ -44,6 +44,14 @@
   overflow-x: auto;
 }
 
+.scahoo-leaderboard-items-placeholder {
+  color: var(--text-tertiary);
+  text-align: center;
+  font-style: italic;
+}
+
+/* --- SCAHOO LEADERBOARD ITEM --- */
+
 .scahoo-leaderboard-item {
   margin: 8px;
 

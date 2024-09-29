@@ -1,19 +1,28 @@
-import { users } from "./data/users.js";
+import { users, usersTest } from "./data/users.js";
+
+let usersList = users;
+
+// Uncomment out for debugging
+// usersList = usersTest;
 
 const leaderboardList = document.querySelector(".scahoo-leaderboard-list");
-
-const leaderboardItemTemplate = document.querySelector("template.tem-scahoo-leaderboard-item");
+const leaderboardItemTemplate = document.querySelector(
+  "template.tem-scahoo-leaderboard-item"
+);
 
 export function addLeaderboardItem(item) {
-  let leaderboardItemClone = leaderboardItemTemplate.content.firstElementChild.cloneNode(true);
-  
+  let leaderboardItemClone =
+    leaderboardItemTemplate.content.firstElementChild.cloneNode(true);
+
   if (item.name) {
-    leaderboardItemClone.querySelector(".scahoo-leaderboard-item-name").textContent =
-      item.name;
+    leaderboardItemClone.querySelector(
+      ".scahoo-leaderboard-item-name"
+    ).textContent = item.name;
   }
   if (item.descriptor) {
-    leaderboardItemClone.querySelector(".scahoo-leaderboard-item-descriptor").textContent =
-      item.descriptor;
+    leaderboardItemClone.querySelector(
+      ".scahoo-leaderboard-item-descriptor"
+    ).textContent = item.descriptor;
   }
   if (item.rank) {
     let rank;
@@ -28,21 +37,31 @@ export function addLeaderboardItem(item) {
         rank = "🥉";
         break;
       default:
-        rank = item.rank
+        rank = item.rank;
         break;
     }
-    leaderboardItemClone.querySelector(".scahoo-leaderboard-item-rank").textContent =
-      rank;
+    leaderboardItemClone.querySelector(
+      ".scahoo-leaderboard-item-rank"
+    ).textContent = rank;
   }
   if (item.points) {
-    leaderboardItemClone.querySelector(".scahoo-leaderboard-item-points").textContent =
-      item.points + " pts";
+    leaderboardItemClone.querySelector(
+      ".scahoo-leaderboard-item-points"
+    ).textContent = item.points + " pts";
   }
 
   leaderboardList.appendChild(leaderboardItemClone);
 }
 
-for (let item of users) {
-  addLeaderboardItem(item);
-  
+if (usersList.length > 0) {
+  for (let item of usersList) {
+    addLeaderboardItem(item);
+  }
+} else {
+  const element = document.createElement("p");
+  const node = document.createTextNode("Nobody here yet!");
+  element.classList.add("scahoo-leaderboard-items-placeholder");
+  element.appendChild(node);
+
+  leaderboardList.appendChild(element);
 }
