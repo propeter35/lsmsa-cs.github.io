@@ -1,16 +1,20 @@
-import { tasks } from "./data/tasks.js";
+import { hunt } from "./data/hunt.js";
 import { drawBoard } from "./modules/drawBoard.js";
 // import { attachModalOpeners, openModal, setupModalListeners } from "./modules/modals.js";
 
-drawBoard(tasks);
+drawBoard(hunt);
 attachModalOpeners();
 
 // import { setupModal } from "./modules/setupModal.js";
 
+// ---
+
 const main = document.querySelector("main");
 
 const modalTemplate = document.querySelector("template.tem-scahoo-modal");
-const modalTaskTemplate = document.querySelector("template.tem-scahoo-modal-task");
+const modalTaskTemplate = document.querySelector(
+  "template.tem-scahoo-modal-task"
+);
 const modalResourcesTemplate = document.querySelector(
   "template.tem-scahoo-task-resources"
 );
@@ -73,7 +77,7 @@ export function setupModal(modal, cardID, taskID) {
     skipTasks = true;
   }
 
-  let categories = tasks.categories;
+  let categories = hunt.categories;
   let card;
   let task;
 

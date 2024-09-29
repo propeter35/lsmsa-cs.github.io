@@ -1,3 +1,7 @@
+.scahoo-leaderboard {
+  padding-bottom: 24px;
+}
+
 .scahoo-leaderboard-content {
   display: flex;
   flex-direction: column;

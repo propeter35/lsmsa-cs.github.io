@@ -1,4 +1,8 @@
-export let tasks = {
+export let hunt = {
+  info: {
+    title: "Computer Science Scavenger Hunt",
+    description: "Explore the various fields of Computer Science by completing these tasks! More cards and tasks will be added in the future.\nThe current deadline for this event is November 16, 2024. If you are a club officer, you need to submit at least one task!"
+  },
   categories: [
     {
       id: "g4afcb6",

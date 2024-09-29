@@ -64,12 +64,16 @@ details > summary::-webkit-details-marker {
 }
 
 body {
+  background-color: var(--background-secondary);
+}
+
+body.sticking {
   background-color: var(--background-primary);
 }
 
 /* --- BODY BACKGROUND COLOR SCROLL --- */
 
-html {
+/* html {
   scroll-timeline: --page-scroll block;
 }
 
@@ -103,7 +107,7 @@ body {
   to {
     background-color: var(--background-primary);
   }
-}
+} */
 
 /* --- INNER DIV CLASS --- */
 
@@ -271,12 +275,12 @@ a:hover {
   transition: background-color 0.15s;
 }
 
-.scahoo-info h1 {
+.scahoo-info-title {
   padding-top: 16px;
   padding-bottom: 4px;
 }
 
-.scahoo-info p {
+.scahoo-info-description {
   padding-left: 12px;
 }
 

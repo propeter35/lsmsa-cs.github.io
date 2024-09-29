@@ -1,7 +1,7 @@
 /* --- SCAHOO BOARD --- */
 
 .scahoo-board {
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   padding-inline: 16px;
 
   display: flex;
@@ -63,9 +63,9 @@
     outline-color 0.15s, box-shadow 0.15s;
 }
 
-/* --- SCAHOO BOARD CARD HEADER --- */
+/* --- SCAHOO BOARD CARD HEADING --- */
 
-.scahoo-board-card-header {
+.scahoo-board-card-heading {
   display: flex;
   flex-direction: column;
 
@@ -76,7 +76,7 @@
   cursor: pointer;
 }
 
-.scahoo-board-card[open] .scahoo-board-card-header {
+.scahoo-board-card[open] .scahoo-board-card-heading {
   border-radius: 8px 8px 0 0;
 }
 
@@ -123,7 +123,7 @@
 }
 
 .scahoo-board-card
-  .scahoo-board-card-header
+  .scahoo-board-card-heading
   .scahoo-board-card-kicker
   .scahoo-board-card-arrow {
   transition: scale 0.3s, rotate 0.1s ease-out;
@@ -131,13 +131,13 @@
 }
 
 .scahoo-board-card[open]
-  .scahoo-board-card-header
+  .scahoo-board-card-heading
   .scahoo-board-card-kicker
   .scahoo-board-card-arrow {
   rotate: -180deg;
 }
 
-.scahoo-board-card-header:hover
+.scahoo-board-card-heading:hover
   .scahoo-board-card-kicker
   .scahoo-board-card-arrow {
   scale: 1.5;
@@ -428,7 +428,7 @@ body:has(.scahoo-modal-wrapper.open) {
 
 /* --- SCAHOO MODAL CONTENT --- */
 
-.scahoo-modal-header {
+.scahoo-modal-heading {
   padding: 16px;
 }
 
@@ -633,7 +633,7 @@ body:has(.scahoo-modal-wrapper.open) {
   background-color: var(--background-secondary-hover);
 }
 
-.scahoo-modal-task-resource-header {
+.scahoo-modal-task-resource-heading {
   display: flex;
 }
 
