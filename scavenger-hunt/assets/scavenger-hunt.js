@@ -1,25 +1,5 @@
 import { hunt } from "./data/hunt.js";
 
-// --- BODY BACKGROUND COLOR ---
-
-// CREDIT: https://ryanmulligan.dev/blog/sticky-header-scroll-shadow/
-
-const body = document.querySelector("body");
-const navbar = document.querySelector("#main-navbar");
-const scrollWatcher = document.createElement("div");
-
-scrollWatcher.setAttribute("data-scroll-watcher", "");
-body.before(scrollWatcher);
-
-const navObserver = new IntersectionObserver(
-  (entries) => {
-    body.classList.toggle("sticking", !entries[0].isIntersecting);
-  },
-  { rootMargin: navbar.offsetHeight + "px 0px 0px 0px" }
-);
-
-navObserver.observe(scrollWatcher);
-
 // --- COLOR SCHEME ---
 
 document.querySelectorAll("#color-scheme-switcher").forEach((element) => {
@@ -58,3 +38,29 @@ document.querySelectorAll(".scahoo-tab:not(.disabled)").forEach((element) => {
     }
   });
 });
+
+// --- BODY BACKGROUND COLOR ---
+// Must be placed below SCAHOO INFO
+
+// CREDIT: https://ryanmulligan.dev/blog/sticky-header-scroll-shadow/
+
+const body = document.querySelector("body");
+const scrollWatcher = document.createElement("div");
+
+scrollWatcher.setAttribute("data-scroll-watcher", "");
+body.before(scrollWatcher);
+
+let topSectionHeight =
+  document.querySelector("#main-navbar").offsetHeight +
+  document.querySelector(".scahoo-info").offsetHeight +
+  document.querySelector(".scahoo-tabs").offsetHeight -
+  1; // Subtract 1px to allow for #content anchor to work
+
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    body.classList.toggle("sticking", !entries[0].isIntersecting);
+  },
+  { rootMargin: topSectionHeight + "px 0px 0px 0px" }
+);
+
+navObserver.observe(scrollWatcher);

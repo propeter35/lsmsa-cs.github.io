@@ -65,49 +65,12 @@ details > summary::-webkit-details-marker {
 
 body {
   background-color: var(--background-secondary);
+  transition: background-color 0.15s;
 }
 
 body.sticking {
   background-color: var(--background-primary);
 }
-
-/* --- BODY BACKGROUND COLOR SCROLL --- */
-
-/* html {
-  scroll-timeline: --page-scroll block;
-}
-
-body {
-  animation: body-scroll auto linear;
-  animation-timeline: --page-scroll;
-}
-
-@-moz-keyframes body-scroll {
-  from {
-    background-color: var(--background-secondary);
-  }
-  to {
-    background-color: var(--background-primary);
-  }
-}
-
-@-webkit-keyframes body-scroll {
-  from {
-    background-color: var(--background-secondary);
-  }
-  to {
-    background-color: var(--background-primary);
-  }
-}
-
-@keyframes body-scroll {
-  from {
-    background-color: var(--background-secondary);
-  }
-  to {
-    background-color: var(--background-primary);
-  }
-} */
 
 /* --- INNER DIV CLASS --- */
 
