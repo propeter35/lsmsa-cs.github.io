@@ -8,10 +8,10 @@
 
   <link rel="stylesheet" href="../assets/scavenger-hunt.css" />
   <link rel="stylesheet" href="../assets/leaderboard.css" />
-  <link rel="stylesheet" href="../assets/board.css" />
 
-  <link id="color-scheme-light" rel="stylesheet" href="../assets/color-schemes/light.css" disabled>
-  <link id="color-scheme-dark" rel="stylesheet" href="../assets/color-schemes/dark.css">
+  <link class="color-scheme" id="color-scheme-light" rel="stylesheet" href="../assets/color-schemes/light.css" disabled>
+  <link class="color-scheme" id="color-scheme-dark" rel="stylesheet" href="../assets/color-schemes/dark.css">
+  <script src="../assets/modules/colorScheme.js"></script>
 
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
@@ -24,7 +24,6 @@
 
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <script src="../assets/modules/colorScheme.js"></script>
 </head>
 
 <body>
@@ -38,7 +37,7 @@
       </a>
       <button id="color-scheme-switcher">
         <div id="color-scheme-switcher-icon">
-
+          <i class="color-scheme-icon-auto" data-lucide="sun-moon"></i>
           <i class="color-scheme-icon-dark" data-lucide="moon"></i>
           <i class="color-scheme-icon-light" data-lucide="sun"></i>
         </div>

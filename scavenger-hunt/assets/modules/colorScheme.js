@@ -1,26 +1,100 @@
+let validSchemes = ["light", "dark"];
+
+let validModes = ["auto"].concat(validSchemes);
+
 let colorScheme;
+let schemeMode;
+schemeMode = window.localStorage.getItem("schemeMode");
+if (!schemeMode) schemeMode = "auto";
+
 if (window.matchMedia) {
-  colorScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", ({ matches }) => {
+      if (schemeMode == "auto") {
+        refreshColorScheme();
+      }
+    });
 }
-updateColorScheme();
 
-// false = light
-// true = dark
+function refreshColorScheme() {
+  updateColorScheme(schemeMode);
+  storeColorMode();
+  updatePageColorScheme(colorScheme);
+  updateColorSchemeIcons(schemeMode);
 
-function updateColorScheme() {
-  console.log(colorScheme);
-  switch (colorScheme) {
+  // console.log("Mode, Scheme: " + schemeMode + " " + colorScheme);
+}
+
+// ---
+
+function cycleColorMode() {
+  if (schemeMode == undefined) {
+    schemeMode = "auto";
+  } else {
+    // Cycles schemeMode through validModes
+    schemeMode =
+      validModes[(validModes.indexOf(schemeMode) + 1) % validModes.length];
+  }
+  refreshColorScheme(schemeMode);
+}
+
+// ---
+
+function updateColorScheme(mode) {
+  if (mode == "auto") {
+    if (window.matchMedia) {
+      colorScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+  } else {
+    colorScheme = mode;
+  }
+}
+
+function storeColorMode() {
+  let key = "schemeMode";
+  let value = schemeMode;
+
+  window.localStorage.setItem(key, value);
+}
+
+function updatePageColorScheme(scheme) {
+  document.querySelectorAll(".color-scheme").forEach((element) => {
+    element.setAttribute("disabled", "");
+  });
+  switch (scheme) {
     case "light":
       document.querySelector("#color-scheme-light").removeAttribute("disabled");
-      document.querySelector("#color-scheme-dark").setAttribute("disabled", "");
+      break;
+    case "dark":
+      document.querySelector("#color-scheme-dark").removeAttribute("disabled");
+      break;
+    default:
+      break;
+  }
+}
+
+function updateColorSchemeIcons(mode) {
+  document.querySelectorAll("#color-scheme-switcher svg").forEach((element) => {
+    element.classList.add("color-scheme-switcher-hidden");
+  });
+  switch (mode) {
+    case "auto":
+      document
+        .querySelector(".color-scheme-icon-auto")
+        .classList.remove("color-scheme-switcher-hidden");
+      break;
+    case "light":
+      document
+        .querySelector(".color-scheme-icon-light")
+        .classList.remove("color-scheme-switcher-hidden");
       break;
     case "dark":
       document
-        .querySelector("#color-scheme-light")
-        .setAttribute("disabled", "");
-      document.querySelector("#color-scheme-dark").removeAttribute("disabled");
+        .querySelector(".color-scheme-icon-dark")
+        .classList.remove("color-scheme-switcher-hidden");
       break;
 
     default:

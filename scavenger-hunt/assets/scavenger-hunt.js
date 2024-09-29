@@ -1,15 +1,13 @@
 // --- COLOR SCHEME ---
 
-// let colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
 document.querySelectorAll("#color-scheme-switcher").forEach((element) => {
-  element.addEventListener("click", toggleColorTheme);
+  element.addEventListener("click", cycleColorMode);
 });
 
-function toggleColorTheme() {
-  colorScheme = colorScheme == "dark" ? "light" : "dark";
-  updateColorScheme();
-}
+document.querySelectorAll("body").forEach((element) => {
+  element.addEventListener("load", refreshColorScheme());
+});
+
 
 // --- TAB BAR ---
 
@@ -19,7 +17,11 @@ document.querySelectorAll(".scahoo-tab:not(.disabled)").forEach((element) => {
     if (this.getAttribute("href")) {
       window.location.href = this.getAttribute("href");
     } else {
-      if (confirm("Uh oh, this tab hasn't been setup! Would you like to return to the main Scavenger Hunt page?")) {
+      if (
+        confirm(
+          "Uh oh, this tab hasn't been setup! Would you like to return to the main Scavenger Hunt page?"
+        )
+      ) {
         window.location.href = "/scavenger-hunt";
       }
     }

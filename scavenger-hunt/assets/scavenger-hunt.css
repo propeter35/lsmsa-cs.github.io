@@ -220,13 +220,19 @@ a:hover {
   scale: 0.9;
   transition: scale 0.15s;
 }
+
 #color-scheme-switcher:hover #color-scheme-switcher-icon {
   scale: 1;
 }
 
 #color-scheme-switcher-icon * {
-  /* display: none; */
   position: absolute;
+
+  transition: opacity 0.15s, color 0.15s;
+}
+
+.color-scheme-switcher-hidden {
+  opacity: 0;
 }
 
 #color-scheme-switcher:hover {
