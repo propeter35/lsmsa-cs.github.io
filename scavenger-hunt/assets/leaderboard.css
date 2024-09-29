@@ -65,7 +65,7 @@
   color: var(--text-primary);
   box-shadow: 0 0 8px var(--shadow);
 
-  transition: outline-width 0.3s ease-in, background-color 0.15s, outline 0.15s, box-shadow 0.15s;
+  transition: outline-width 0.3s ease-in, background-color 0.15s, outline-color 0.15s, box-shadow 0.15s;
 
   display: flex;
   flex-direction: row;
